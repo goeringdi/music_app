@@ -8,9 +8,7 @@ const MenuBar = function () {
     return (
         <div className="main__centerblock centerblock">
         <div className="centerblock__search search">
-            <svg className="search__svg">
-                <use href={search}></use>
-            </svg>
+            <img className= "search__svg" src={search} alt= "search"/>
             <input className="search__text" type="search" placeholder="Поиск" name="search"/>
         </div>
         <h2 className="centerblock__h2">Треки</h2>
@@ -34,9 +32,7 @@ const MenuBar = function () {
                 <div className="playlist-title__col col02">ИСПОЛНИТЕЛЬ</div>
                 <div className="playlist-title__col col03">АЛЬБОМ</div>
                 <div className="playlist-title__col col04">
-                    <svg className="playlist-title__svg" alt="time">
-                        <use href={watch}></use>
-                    </svg>
+                    <img className= "playlist-title__svg" src={watch} alt= "watch"/>  
                 </div>
             </div>
             <div className="content__playlist playlist">
@@ -44,9 +40,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -62,9 +56,7 @@ const MenuBar = function () {
                             <a className="track__album-link" href="http://">Welcome Reality</a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">4:44</span>
                         </div>
                     </div>
@@ -73,9 +65,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>                         
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -95,9 +85,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 2:22
                             </span>
@@ -108,9 +96,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -130,9 +116,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 2:22
                             </span>
@@ -143,9 +127,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -167,9 +149,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 4:12
                             </span>
@@ -180,9 +160,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -204,9 +182,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 2:54
                             </span>
@@ -217,9 +193,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -241,23 +215,18 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 5:20
                             </span>
                         </div>
                     </div>
                 </div>
-
                 <div className="playlist__item">
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -279,9 +248,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 3:41
                             </span>
@@ -292,9 +259,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -314,9 +279,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 1:48
                             </span>
@@ -327,9 +290,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -349,9 +310,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 3:32
                             </span>
@@ -362,9 +321,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://">
@@ -384,9 +341,7 @@ const MenuBar = function () {
                             </a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text">
                                 3:36
                             </span>
@@ -397,9 +352,7 @@ const MenuBar = function () {
                     <div className="playlist__track track">
                         <div className="track__title">
                             <div className="track__title-image">
-                                <svg className="track__title-svg" alt="music">
-                                    <use href={note}></use>
-                                </svg>
+                                <img className="track__title-svg" src={note} alt="music"/>
                             </div>
                             <div className="track__title-text">
                                 <a className="track__title-link" href="http://"> 
@@ -414,9 +367,7 @@ const MenuBar = function () {
                             <a className="track__album-link" href="http://"></a>
                         </div>
                         <div className="track__time">
-                            <svg className="track__time-svg" alt="time">
-                                <use href={like}></use>
-                            </svg>
+                            <img className="track__time-svg" src={like} alt="time"/>
                             <span className="track__time-text"></span>
                         </div>
                     </div>
