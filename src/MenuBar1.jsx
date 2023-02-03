@@ -46,9 +46,17 @@ const MenuBar = function () {
 
 
     const Filter1 = styled.div`
-        color: ${(visibleAuthors) => (visibleAuthors ? "#D9B6FF" : "white")};
-        border: ${(visibleAuthors) => (visibleAuthors ? " 1px solid #D9B6FF" : "white")};
+        color: ${(!visibleAuthors) ? "#D9B6FF" : "white"};
+        border: ${(!visibleAuthors) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
         `;
+    const Filter2 = styled.div`
+    color: ${(!visibleYear) ? "#D9B6FF" : "white"};
+    border: ${(!visibleYear) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
+    `;
+    const Filter3 = styled.div`
+    color: ${(!visibleGenre) ? "#D9B6FF" : "white"};
+    border: ${(!visibleGenre) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
+    `;
 
     if (!isLoading) {
         return(
@@ -76,15 +84,15 @@ const MenuBar = function () {
        {!visibleAuthors && (
         <ShowAuthor />
        )}
-        <div className="filter__button button-year _btn-text" onClick={toggleVisibilityYear} role= "presentation">
+        <Filter2 className="filter__button button-year _btn-text" onClick={toggleVisibilityYear} role= "presentation">
             году выпуска
-        </div>
+        </Filter2>
         {!visibleYear && (
         <ShowYear />
        )}
-        <div className="filter__button button-genre _btn-text" onClick={toggleVisibilityGenre} role= "presentation">
+        <Filter3 className="filter__button button-genre _btn-text" onClick={toggleVisibilityGenre} role= "presentation">
             жанру
-        </div>
+        </Filter3>
         {!visibleGenre && (
         <ShowGenre />
        )}
