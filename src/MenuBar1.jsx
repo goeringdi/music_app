@@ -1,102 +1,40 @@
-import search from '../src/img/icon/search.svg';
 import watch from '../src/img/icon/watch.svg';
 import React from 'react';
-import ShowAuthor from './Author';
-import ShowYear from './Year';
-import ShowGenre from './Genre';
-import styled from 'styled-components';
 import note from '../src/img/icon/note.svg';
 import like from '../src/img/icon/like.svg';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { useEffect } from 'react';
 import { SkeletonTheme } from 'react-loading-skeleton';
+import Box from './Box';
 
 
 const { useState } = React;
 
 const MenuBar = function () {
-    const [visibleAuthors, setVisibleAuthors] = useState(true);
-    const toggleVisibilityAuthors = () => {
-        setVisibleAuthors(!visibleAuthors);
-        setVisibleGenre(true);
-        setVisibleYear(true);
-    }
 
-    const [visibleGenre, setVisibleGenre] = useState(true);
-    const toggleVisibilityGenre = () => {
-        setVisibleAuthors(true);
-        setVisibleGenre(!visibleGenre);
-        setVisibleYear(true);
-    }
-    const [visibleYear, setVisibleYear] = useState(true);
-    const toggleVisibilityYear = () => {
-        setVisibleAuthors(true);
-        setVisibleGenre(true);
-        setVisibleYear(!visibleYear);
-    }
-
-    const [isLoading, setIsLoading] = useState(false);
-    const toggleVisibilitySkeleton = () => setIsLoading(true);
+    const [isLoading, setIsLoading] = useState(true);
+    const toggleVisibilitySkeleton = () => setIsLoading(false);
 
     useEffect(() => {
         let timeout = setTimeout(() => toggleVisibilitySkeleton(), 3000)
         return () => clearTimeout(timeout);
     })
 
-
-    const Filter1 = styled.div`
-        color: ${(!visibleAuthors) ? "#D9B6FF" : "white"};
-        border: ${(!visibleAuthors) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
-        `;
-    const Filter2 = styled.div`
-    color: ${(!visibleYear) ? "#D9B6FF" : "white"};
-    border: ${(!visibleYear) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
-    `;
-    const Filter3 = styled.div`
-    color: ${(!visibleGenre) ? "#D9B6FF" : "white"};
-    border: ${(!visibleGenre) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
-    `;
-
-    if (!isLoading) {
+    if (isLoading) {
         return(
             <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                <Box>
                 <p>
-                    <Skeleton height={30}  count={10} />
+                <Skeleton count={8} height={30} />;
                 </p>
+                </Box>
+                
             </SkeletonTheme>
         )
-    } else {    
+    }    
         return (
-            <div className="main__centerblock centerblock">
-        <div className="centerblock__search search">
-            <img className= "search__svg" src={search} alt= "search"/>
-            <input className="search__text" type="search" placeholder="Поиск" name="search"/>
-        </div>
-        <h2 className="centerblock__h2">Треки</h2>
-        <div className="centerblock__filter filter">
-            <div className="filter__title">
-                Искать по:
-            </div>
-            <Filter1 className="filter__button button-author _btn-text" onClick={toggleVisibilityAuthors} role= "presentation">
-            исполнителю
-        </Filter1>
-       {!visibleAuthors && (
-        <ShowAuthor />
-       )}
-        <Filter2 className="filter__button button-year _btn-text" onClick={toggleVisibilityYear} role= "presentation">
-            году выпуска
-        </Filter2>
-        {!visibleYear && (
-        <ShowYear />
-       )}
-        <Filter3 className="filter__button button-genre _btn-text" onClick={toggleVisibilityGenre} role= "presentation">
-            жанру
-        </Filter3>
-        {!visibleGenre && (
-        <ShowGenre />
-       )}
-    </div>
+        <div className="main__centerblock centerblock">    
         <div className="centerblock__content">
             <div className="content__title playlist-title">
                 <div className="playlist-title__col col01">Трек</div>
@@ -445,8 +383,9 @@ const MenuBar = function () {
                 </div>
             </div>                        
         </div>
-    </div>
+        </div>
+    
     )
-}
+
 }
 export default MenuBar;
