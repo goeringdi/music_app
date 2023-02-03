@@ -1,8 +1,9 @@
 import './css/style.css';
-import Header from './Header';
-import MenuBar from './MenuBar';
+import Nav from './Header';
+import MenuBar from './MenuBar1';
 import SideBar from './SideBar';
 import Player from './Player';
+
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <div className="wrapper">
         <div className="container">
             <main className="main">
-              <Header />;
+              <Nav />;
               <MenuBar />;
               <SideBar />;
               <Player />;          

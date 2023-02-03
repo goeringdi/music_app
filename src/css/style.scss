@@ -30,15 +30,15 @@ ul li {
 //-------------------------------//
 
 // ========== fonts ========
-@font-face {
-    font-family: 'StratosSkyeng';
-    src: local('StratosSkyeng'), local('StratosSkyeng'),
-        url('../fonts/StratosSkyeng.woff2') format('woff2'),
-        url('../fonts/StratosSkyeng.woff') format('woff'),
-        url('../fonts/StratosSkyeng.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-}
+// @font-face {
+//     font-family: 'StratosSkyeng';
+//     src: local('StratosSkyeng'), local('StratosSkyeng'),
+//         url('../fonts/StratosSkyeng.woff2') format('woff2'),
+//         url('../fonts/StratosSkyeng.woff') format('woff'),
+//         url('../fonts/StratosSkyeng.ttf') format('truetype');
+//     font-weight: 400;
+//     font-style: normal;
+// }
 
 //--------------------------
 
@@ -762,5 +762,50 @@ body {
 
     &__progress-line {
         width: 109px;
+    }    
+}
+
+.suggest {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 34px;
+    gap: 10px;
+
+    width: 248px;
+    height: 305px;
+    left: 386px;
+    top: 288px;
+
+    background: #313131;
+    border-radius: 12px;
+
+    &__block{
+       position: relative;
+    }
+    &__item{
+        width: 119px;
+        height: 24px;
+        font-family: 'StratosSkyeng';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 24px;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #FFFFFF;
+        margin-bottom: 28px;
+    }
+    &__author{
+        top: 288px;
+        left: 450px;
+    }
+    &__year{
+        top: 288px;
+        left: 600px;
+    }
+    &__genre{
+        top: 288px;
+        left: 750px;
     }
 }
