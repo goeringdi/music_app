@@ -60,7 +60,7 @@ body {
 }
 
 .container {
-    max-width: 1920px;
+    max-width: 2070px;
     height: 100vh;
     margin: 0 auto;
     position: relative;
@@ -797,15 +797,15 @@ body {
         margin-bottom: 28px;
     }
     &__author{
-        top: 288px;
-        left: 450px;
+        top: 305px;
+        left: 550px;
     }
     &__year{
-        top: 288px;
-        left: 600px;
+        top: 305px;
+        left: 700px;
     }
     &__genre{
-        top: 288px;
-        left: 750px;
+        top: 305px;
+        left: 850px;
     }
 }

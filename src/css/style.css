@@ -41,7 +41,7 @@ body {
 }
 
 .container {
-  max-width: 1920px;
+  max-width: 2070px;
   height: 100vh;
   margin: 0 auto;
   position: relative;
@@ -82,6 +82,7 @@ body {
 .main {
   flex: 1 1 auto;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
 }
 .main__nav {
@@ -637,14 +638,14 @@ body {
   margin-bottom: 28px;
 }
 .suggest__author {
-  top: 288px;
-  left: 450px;
+  top: 305px;
+  left: 550px;
 }
 .suggest__year {
-  top: 288px;
-  left: 600px;
+  top: 305px;
+  left: 700px;
 }
 .suggest__genre {
-  top: 288px;
-  left: 750px;
+  top: 305px;
+  left: 850px;
 }/*# sourceMappingURL=style.css.map */
