@@ -1,14 +1,14 @@
 import search from '..//img/icon/search.svg';
 import React, {useState} from 'react';
-import ShowAuthor from '../Author';
-import ShowYear from '../Year';
-import ShowGenre from '../Genre';
+import ShowAuthor from '../Suggest/Author';
+import ShowYear from '../Suggest/Year';
+import ShowGenre from '../Suggest/Genre';
 import 'react-loading-skeleton/dist/skeleton.css';
 import {CenterBlockFilter, CenterBlockH2, Filter1, Filter2, Filter3, CenterBlockSearch, FilterTitle, MainCenterBlock, SearchSvg, SearchText} from './MenuBar.styled'
 import styled from 'styled-components';
 
 
-function MenuBarHeader () {
+const MenuBarHeader = function () {
 const [visibleAuthors, setVisibleAuthors] = useState(true);
 const toggleVisibilityAuthors = () => {
     setVisibleAuthors(!visibleAuthors);

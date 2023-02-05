@@ -13,7 +13,7 @@ import {
 } from './Header.styled'
 
 const { useState } = React
-function Nav() {
+const Nav = function() {
   const [visible, setVisible] = useState(true)
   const toggleVisibility = () => setVisible(!visible)
 

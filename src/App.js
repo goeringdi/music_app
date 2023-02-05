@@ -1,4 +1,3 @@
-import './css/style.css';
 import Nav from './Header/Header';
 import MenuBar from './MenuBar/MenuBar1';
 import SideBar from './SideBar/SideBar';
