@@ -1,24 +1,11 @@
-import Nav from './Header/Header';
-import MenuBar from './MenuBar/MenuBar1';
-import SideBar from './SideBar/SideBar';
-import Player from './Player/Player';
-import MenuBarHeader from './MenuBar/MenuBar';
-import { MainCenterBlock } from './MenuBar/MenuBar.styled';
-import { Container, Footer, Main, Wrapper } from './App.styled';
+import { Container, Footer, Wrapper } from './App.styled';
+import { AppRoutes } from "./routes";
 
 function App() {
   return ( 
     <Wrapper>
       <Container>
-        <Main>
-          <Nav />
-          <MainCenterBlock>
-            <MenuBarHeader />
-            <MenuBar />
-          </MainCenterBlock>
-          <SideBar />
-          <Player />
-        </Main>
+        <AppRoutes />
         <Footer></Footer>
       </Container>
     </Wrapper>

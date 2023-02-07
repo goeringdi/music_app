@@ -8,12 +8,28 @@ import Skeleton from 'react-loading-skeleton';
 import React from 'react';
 import { useEffect } from 'react';
 import { MainSidebar, SidebarAvatar, SidebarBlock, SidebarImg, SidebarItem, SidebarLink, SidebarList, SidebarPersonal, SidebarPersonalName } from './SideBar.styled'
+import { useNavigate } from "react-router-dom";
 
 
 const { useState } = React;
 
 
 const SideBar = function() {
+
+    const navigate = useNavigate();
+
+    const HandlePlaylistOfTheDay = () => {
+        navigate("/playlistoftheday", {replace: true});
+    };
+
+    const HandleHundredHits = () => {
+        navigate("/hundredhits", {replace: true});
+    };
+
+    const HandleIndi = () => {
+        navigate("/indi", {replace: true});
+    };
+
     const [isLoading, setIsLoading] = useState(true);
     const toggleVisibilitySkeleton = () => setIsLoading(false);
 
@@ -46,17 +62,17 @@ const SideBar = function() {
                 <SidebarList>
                     <SidebarItem>
                         <SidebarLink href="#">
-                            <SidebarImg src={playlist01} alt="day's playlist"/>
+                            <SidebarImg onClick={HandlePlaylistOfTheDay} src={playlist01} alt="day's playlist"/>
                         </SidebarLink>
                     </SidebarItem>
                     <SidebarItem>
                         <SidebarLink href="#">
-                            <SidebarImg src={playlist02} alt="day's playlist"/>
+                            <SidebarImg onClick={HandleHundredHits} src={playlist02} alt="day's playlist"/>
                         </SidebarLink>
                     </SidebarItem>
                     <SidebarItem>
                         <SidebarLink href="#">
-                            <SidebarImg src={playlist03} alt="day's playlist"/>
+                            <SidebarImg onClick={HandleIndi} src={playlist03} alt="day's playlist"/>
                         </SidebarLink>
                     </SidebarItem>
                 </SidebarList>

@@ -1,5 +1,5 @@
-import logo from '../img/logo.png'
-import React from 'react'
+import logo from '../img/logo.png';
+import React from 'react';
 import {
   BurgerLine,
   LogoImage,
@@ -10,17 +10,39 @@ import {
   NavBurger,
   NavLogo,
   NavMenu,
-} from './Header.styled'
+} from './Header.styled';
+import { useNavigate } from "react-router-dom";
+
 
 const { useState } = React
 const Nav = function() {
-  const [visible, setVisible] = useState(true)
-  const toggleVisibility = () => setVisible(!visible)
+  const [visible, setVisible] = useState(true);
+  const toggleVisibility = () => setVisible(!visible);
+
+  const navigate = useNavigate();
+  const HandleMainLink = () => {
+      navigate("/main", {replace: true});
+  };
+
+  const HandleLogoClick = () => {
+      navigate("/main", {replace: true});
+  };
+
+  const HandleMyTracks = () => {
+    navigate("/mytracks", {replace: true});
+  };
+
+  const HandleSignOut = () => {
+    navigate("/", {replace: true});
+  };
+    
+    
+
 
   return (
     <MainNav>
       <NavLogo>
-        <LogoImage src={logo} alt="logo" />
+        <LogoImage onClick={HandleLogoClick} src={logo} alt="logo" />
       </NavLogo>
       <NavBurger onClick={toggleVisibility} role="presentation">
         <BurgerLine></BurgerLine>
@@ -31,13 +53,13 @@ const Nav = function() {
         <NavMenu>
           <MenuList>
             <MenuItem>
-              <MenuLink href="http://">Главное</MenuLink>
+              <MenuLink onClick={HandleMainLink}>Главная</MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="http://">Мой плейлист</MenuLink>
+              <MenuLink onClick={HandleMyTracks}>Мой плейлист</MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink href="http://">Войти</MenuLink>
+              <MenuLink onClick={HandleSignOut}>Выйти</MenuLink>
             </MenuItem>
           </MenuList>
         </NavMenu>
