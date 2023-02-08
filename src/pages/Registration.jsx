@@ -85,7 +85,7 @@ export const Register = function() {
 
     const navigate = useNavigate();
 
-    const HandleRegisterButton = () => {
+    const handleRegisterButton = () => {
         navigate("/", {replace: true});
     };
 
@@ -96,7 +96,7 @@ export const Register = function() {
             <RegisterInput placeholder='Логин'></RegisterInput>
             <RegisterInput placeholder='Пароль'></RegisterInput>
             <RegisterInput placeholder='Повторите пароль'></RegisterInput>
-            <RegisterButton onClick={HandleRegisterButton}>Зарегистрироваться</RegisterButton>
+            <RegisterButton onClick={handleRegisterButton}>Зарегистрироваться</RegisterButton>
         </RegisterBlock>
     )
 }

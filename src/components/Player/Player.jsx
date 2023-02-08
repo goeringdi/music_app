@@ -1,12 +1,12 @@
-import note from '../img/icon/note.svg'
-import like from '../img/icon/like.svg'
-import prev from '../img/icon/prev.svg'
-import play from '../img/icon/play.svg'
-import next from '../img/icon/next.svg'
-import repeat from '../img/icon/repeat.svg'
-import shuffle from '../img/icon/shuffle.svg'
-import dislike from '../img/icon/dislike.svg'
-import volume from '../img/icon/volume.svg'
+import note from '../../img/icon/note.svg'
+import like from '../../img/icon/like.svg'
+import prev from '../../img/icon/prev.svg'
+import play from '../../img/icon/play.svg'
+import next from '../../img/icon/next.svg'
+import repeat from '../../img/icon/repeat.svg'
+import shuffle from '../../img/icon/shuffle.svg'
+import dislike from '../../img/icon/dislike.svg'
+import volume from '../../img/icon/volume.svg'
 import {
   Bar,
   BarContent,

@@ -1,8 +1,8 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { useNavigate } from "react-router-dom";
 import LogoBlack from "../img/LogoBlack.png";
 import styled from "styled-components";
-
+import Cookies from 'js-cookie';
 
 export const LoginBlock = styled.div`
     left: 900px;
@@ -26,6 +26,36 @@ export const LogoImg = styled.img`
 `;
 
 export const LoginInput = styled.input`
+    width: 278.5px;
+    height: 24px;
+    font-family: 'StratosSkyeng';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.003em;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #D0CECE;
+    margin-bottom: 38px;
+    padding: 16px;
+    border-bottom: 1px solid #D0CECE;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    outline: none;
+    &::placeholder{
+        font-family: 'StratosSkyeng';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.003em;
+        font-feature-settings: 'pnum' on, 'lnum' on;
+        color: #D0CECE;
+    }
+`;
+
+export const PassInput = styled.input`
     width: 278.5px;
     height: 24px;
     font-family: 'StratosSkyeng';
@@ -106,22 +136,35 @@ export const RegisterButton = styled.button`
 export const Login = function() {
 
     const navigate = useNavigate();
-    const HandleSignInButton = () => {
-        navigate("/main", {replace: true});
+    
+    const handleSignInButton = () => {
+        const userLogin = textLogin;
+        const userPass = textPass;
+        console.log(userLogin)
+
+        if (userLogin === '1234' && userPass === '1234') {
+            Cookies.set('token', '1234');
+            navigate("/main", {replace: true});
+
+        } else {
+            alert ('Неправильный логин или пароль');
+        }
     };
 
-    const HandleRegisterButton = () => {
+    const handleRegisterButton = () => {
         navigate("/register", {replace: true});
     };
 
+    const [textLogin, setTextLogin] = useState('');
+    const [textPass, setTextPass] = useState('');
 
     return (
         <LoginBlock >
             <LogoImg src={LogoBlack} alt='Logo'/>
-            <LoginInput placeholder='Логин'></LoginInput>
-            <LoginInput placeholder='Пароль'></LoginInput>
-            <SignInButton onClick={HandleSignInButton}>Войти</SignInButton>
-            <RegisterButton onClick={HandleRegisterButton}>Зарегистрироваться</RegisterButton>
+            <LoginInput type="text" value={textLogin} onInput={(e) => setTextLogin(e.target.value)} placeholder='Логин'></LoginInput>
+            <PassInput type="text" value={textPass} onInput={(e) => setTextPass(e.target.value)} placeholder='Пароль'></PassInput>
+            <SignInButton onClick={handleSignInButton}>Войти</SignInButton>
+            <RegisterButton onClick={handleRegisterButton}>Зарегистрироваться</RegisterButton>
         </LoginBlock>
     )
 }
