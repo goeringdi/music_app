@@ -6,7 +6,7 @@ import {
   SearchSvg,
   SearchText,
   CenterBlockH2,
-} from '../MenuBar/MenuBar.styled'
+} from '../components/MenuBar/MenuBar.styled'
 import {
   CenterBlockContent,
   ContentTitle,
@@ -31,7 +31,7 @@ import {
   TrackTime,
   TrackTimeSvg,
   TrackTimeText,
-} from '../MenuBar/MenuBar1.styled'
+} from '../components/MenuBar/MenuBar1.styled'
 import watch from '../img/icon/watch.svg'
 import note from '../img/icon/note.svg'
 import like from '../img/icon/like.svg'

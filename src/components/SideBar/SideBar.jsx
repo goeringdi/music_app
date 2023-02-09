@@ -1,7 +1,7 @@
 import playlist01 from '../../img/playlist01.png'
 import playlist02 from '../../img/playlist02.png'
 import playlist03 from '../../img/playlist03.png'
-import BoxSideBar from '../../BoxSkeleton/BoxSideBar'
+import BoxSideBar from '../BoxSkeleton/BoxSideBar'
 import { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Skeleton from 'react-loading-skeleton'

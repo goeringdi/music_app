@@ -1,4 +1,4 @@
-import search from '..//img/icon/search.svg';
+import search from '../../img/icon/search.svg';
 import React, {useState} from 'react';
 import ShowAuthor from '../Suggest/Author';
 import ShowYear from '../Suggest/Year';
