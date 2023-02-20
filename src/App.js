@@ -1,29 +1,28 @@
-import './css/style.css';
-import Nav from './Header';
-import MenuBar from './MenuBar1';
-import SideBar from './SideBar';
-import Player from './Player';
-import MenuBarHeader from './MenuBar';
-
-
+import Nav from './Header/Header';
+import MenuBar from './MenuBar/MenuBar1';
+import SideBar from './SideBar/SideBar';
+import Player from './Player/Player';
+import MenuBarHeader from './MenuBar/MenuBar';
+import { MainCenterBlock } from './MenuBar/MenuBar.styled';
+import { Container, Footer, Main, Wrapper } from './App.styled';
 
 function App() {
-  return (
-    <div className="wrapper">
-        <div className="container">
-            <main className="main">
-              <Nav />;
-              <div className="main__centerblock centerblock">
-              <MenuBarHeader />;
-              <MenuBar />;
-              </div>  
-              <SideBar />;
-              <Player />;          
-            </main>            
-            <footer className="footer"></footer>
-        </div>
-    </div>
-  );
+  return ( 
+    <Wrapper>
+      <Container>
+        <Main>
+          <Nav />
+          <MainCenterBlock>
+            <MenuBarHeader />
+            <MenuBar />
+          </MainCenterBlock>
+          <SideBar />
+          <Player />
+        </Main>
+        <Footer></Footer>
+      </Container>
+    </Wrapper>
+  )
 }
 
-export default App;
+export default App
