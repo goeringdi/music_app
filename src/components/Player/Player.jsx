@@ -1,8 +1,9 @@
 import note from '../../img/icon/note.svg'
 import like from '../../img/icon/like.svg'
 import prev from '../../img/icon/prev.svg'
-import play from '../../img/icon/play.svg'
+import Play from '../../img/icon/play.svg'
 import next from '../../img/icon/next.svg'
+import Pause from '../../img/icon/pause.svg'
 import repeat from '../../img/icon/repeat.svg'
 import shuffle from '../../img/icon/shuffle.svg'
 import dislike from '../../img/icon/dislike.svg'
@@ -43,22 +44,72 @@ import {
   VolumeProgress,
   VolumeProgressLine,
   VolumeSvg,
-} from './Player.styled'
+  ProgressInput,
+  PlayerBtnPause,
+  PlayerBtnPauseSvg
+} from './Player.styled';
+import { useState, useEffect } from 'react';
+import track from "./Bobby_Marleni_-_Dropin.mp3"; 
+import useSound from "use-sound";
+// import {  AiFillPauseCircle } from "react-icons/ai";
+// import { IconContext } from "react-icons";
 
 const Player = function () {
-  return (
+  const [isPlaying, setIsPlaying] = useState(false);
+ 
+  const [seconds, setSeconds] = useState([]);
+  const [play, { pause, duration, sound }] = useSound([track]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (sound) {
+        setSeconds(sound.seek([]));
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [sound]);
+
+  const playingButton = () => {
+    if (isPlaying) {
+      pause();
+      setIsPlaying(false);
+    } else {
+      play();
+      setIsPlaying(true);
+    }
+  };
+  return ( 
     <Bar>
       <BarContent>
-        <BarPlayerProgress></BarPlayerProgress>
+        <BarPlayerProgress>
+        <ProgressInput
+              type="range"
+              min="0"
+              max={duration / 1000}
+              default="0"
+              value={seconds}
+              className="timeline"
+              onChange={(e) => {
+                sound.seek([e.target.value]);
+              }}
+            />
+        </BarPlayerProgress>
         <BarPlayerBlock>
           <BarPlayer>
             <PlayerControls>
+                
               <PlayerBtnPrev>
                 <PlayerBtnPrevSvg src={prev} alt="prev" />
               </PlayerBtnPrev>
-              <PlayerBtnPlay>
-                <PlayerBtnPlaySvg src={play} alt="play" />
+              {!isPlaying ? (
+                <PlayerBtnPlay>
+                <PlayerBtnPlaySvg src={Play} alt="play" onClick={playingButton}/>
               </PlayerBtnPlay>
+              ) : (
+                <PlayerBtnPause>
+                <PlayerBtnPauseSvg src={Pause} alt="play" onClick={playingButton}/>
+              </PlayerBtnPause>
+              )}
               <PlayerBtnNext>
                 <PlayerBtnNextSvg src={next} alt="next" />
               </PlayerBtnNext>

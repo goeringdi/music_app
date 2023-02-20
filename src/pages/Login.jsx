@@ -148,6 +148,7 @@ export const Login = function() {
 
         } else {
             alert ('Неправильный логин или пароль');
+            
         }
     };
 

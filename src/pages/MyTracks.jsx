@@ -31,14 +31,13 @@ import {
   TrackTime,
   TrackTimeSvg,
   TrackTimeText,
-} from '../components/MenuBar/MenuBar1.styled'
-import watch from '../img/icon/watch.svg'
-import note from '../img/icon/note.svg'
-import like from '../img/icon/like.svg'
-import search from '..//img/icon/search.svg'
-import { Main } from '../App.styled'
-import SideBar from '../components/SideBar/SideBar'
-import Player from '../components/Player/Player'
+} from '../components/MenuBar/MenuBar1.styled';
+import watch from '../img/icon/watch.svg';
+import note from '../img/icon/note.svg';
+import like from '../img/icon/like.svg';
+import search from '..//img/icon/search.svg';
+import { Main } from '../App.styled';
+import Player from '../components/Player/Player';
 
 export const MyTracks = function () {
   return (
@@ -167,7 +166,6 @@ export const MyTracks = function () {
           </ContentPlaylist>
         </CenterBlockContent>
       </MainCenterBlock>
-      <SideBar />
       <Player />
     </Main>
   )
