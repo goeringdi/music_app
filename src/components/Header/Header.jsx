@@ -10,8 +10,14 @@ import {
   NavBurger,
   NavLogo,
   NavMenu,
+  ThemeDiv,
+  ThemeSvg
 } from './Header.styled';
 import { useNavigate } from "react-router-dom";
+import { useThemeContext } from '../../context/theme';
+import dark from '../../img/icon/dark.svg';
+import light from '../../img/icon/light.svg';
+import { themes } from '../../context/theme';
 
 
 const { useState } = React
@@ -36,7 +42,7 @@ const Nav = function() {
     navigate("/", {replace: true});
   };
     
-    
+  const { toggleTheme } = useThemeContext();
 
 
   return (
@@ -61,6 +67,18 @@ const Nav = function() {
             <MenuItem>
               <MenuLink onClick={HandleSignOut}>Выйти</MenuLink>
             </MenuItem>
+            {themes.dark && (
+              <MenuItem>
+                <ThemeDiv onClick={toggleTheme}>
+                  <ThemeSvg src={dark} alt= "dark"/>
+                </ThemeDiv>
+              </MenuItem>
+            )}
+            <MenuItem>
+                <ThemeDiv onClick={toggleTheme}>
+                  <ThemeSvg src={light} alt= "light"/>
+                </ThemeDiv>
+              </MenuItem> 
           </MenuList>
         </NavMenu>
       )}

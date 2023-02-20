@@ -58,3 +58,12 @@ export const MenuLink = styled.a`
     font-size: 16px;
     line-height: 24px;
 `;
+
+export const ThemeDiv = styled.div`
+   margin-top: 10px;
+`;
+
+export const ThemeSvg = styled.img`
+    width: 39px;
+    height: 39px;
+`;
