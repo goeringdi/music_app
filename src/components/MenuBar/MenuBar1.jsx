@@ -1,7 +1,7 @@
-import watch from '../img/icon/watch.svg';
+import watch from '../../img/icon/watch.svg';
 import React from 'react';
-import note from '../img/icon/note.svg';
-import like from '../img/icon/like.svg';
+import note from '../../img/icon/note.svg';
+import like from '../../img/icon/like.svg';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 import { useEffect } from 'react';
