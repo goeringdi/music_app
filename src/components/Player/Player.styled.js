@@ -66,6 +66,21 @@ export const PlayerBtnPlaySvg = styled.img`
     height: 20px;
     fill: #D9D9D9;
 `;
+
+export const PlayerBtnPause = styled.div`
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    margin-right: 23px;
+`;
+
+
+export const PlayerBtnPauseSvg = styled.img`
+    width: 22px;
+    height: 20px;
+    fill: #D9D9D9;
+`;
+
 export const PlayerBtnNext = styled.div`
     padding: 5px;
     display: flex;
@@ -257,4 +272,7 @@ export const VolumeProgress = styled.div`
 export const VolumeProgressLine = styled.input`
     width: 109px;
     cursor: pointer;
+`;
+export const ProgressInput = styled.input`
+    width: 100%
 `;
