@@ -7,7 +7,7 @@ import Pause from '../../img/icon/pause.svg'
 import repeat from '../../img/icon/repeat.svg'
 import shuffle from '../../img/icon/shuffle.svg'
 import dislike from '../../img/icon/dislike.svg'
-import volume from '../../img/icon/volume.svg'
+import volume from '../../img/icon/volumeD.svg'
 import {
   Bar,
   BarContent,
@@ -150,7 +150,7 @@ const Player = function () {
                 <VolumeSvg src={volume} alt="volume" />
               </VolumeImage>
               <VolumeProgress>
-                <VolumeProgressLine type="range" name="range" />
+                <VolumeProgressLine type="range" name="range"  />
               </VolumeProgress>
             </VolumeContent>
           </BarVolumeBlock>

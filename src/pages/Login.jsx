@@ -4,11 +4,15 @@ import LogoBlack from "../img/LogoBlack.png";
 import styled from "styled-components";
 import Cookies from 'js-cookie';
 
-export const LoginBlock = styled.div`
-    left: 900px;
-    top: 370px;
-    position: absolute;
+export const LoginContainer = styled.div`
     display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+export const LoginBlock = styled.div`
+    display: flex;
+    margin-top: 320px;
     flex-direction: column;
     align-content: center;
     align-items: center;
@@ -28,7 +32,7 @@ export const LogoImg = styled.img`
 export const LoginInput = styled.input`
     width: 278.5px;
     height: 24px;
-    font-family: 'StratosSkyeng';
+    font-family: "StratosSkyeng";
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -44,7 +48,7 @@ export const LoginInput = styled.input`
     border-right: 0;
     outline: none;
     &::placeholder{
-        font-family: 'StratosSkyeng';
+        font-family: "StratosSkyeng";
         font-style: normal;
         font-weight: 400;
         font-size: 18px;
@@ -160,12 +164,15 @@ export const Login = function() {
     const [textPass, setTextPass] = useState('');
 
     return (
-        <LoginBlock >
-            <LogoImg src={LogoBlack} alt='Logo'/>
-            <LoginInput type="text" value={textLogin} onInput={(e) => setTextLogin(e.target.value)} placeholder='Логин'></LoginInput>
-            <PassInput type="text" value={textPass} onInput={(e) => setTextPass(e.target.value)} placeholder='Пароль'></PassInput>
-            <SignInButton onClick={handleSignInButton}>Войти</SignInButton>
-            <RegisterButton onClick={handleRegisterButton}>Зарегистрироваться</RegisterButton>
-        </LoginBlock>
+        <LoginContainer>
+            <LoginBlock >
+                <LogoImg src={LogoBlack} alt='Logo'/>
+                <LoginInput type="text" value={textLogin} onInput={(e) => setTextLogin(e.target.value)} placeholder='Логин'></LoginInput>
+                <PassInput type="text" value={textPass} onInput={(e) => setTextPass(e.target.value)} placeholder='Пароль'></PassInput>
+                <SignInButton onClick={handleSignInButton}>Войти</SignInButton>
+                <RegisterButton onClick={handleRegisterButton}>Зарегистрироваться</RegisterButton>
+            </LoginBlock>
+        </LoginContainer>
+        
     )
 }

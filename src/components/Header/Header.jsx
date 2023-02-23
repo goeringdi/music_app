@@ -14,10 +14,9 @@ import {
   ThemeSvg
 } from './Header.styled';
 import { useNavigate } from "react-router-dom";
-import { useThemeContext } from '../../context/theme';
 import dark from '../../img/icon/dark.svg';
 import light from '../../img/icon/light.svg';
-import { themes } from '../../context/theme';
+import { useThemeContext } from '../../context/theme';
 
 
 const { useState } = React
@@ -41,12 +40,21 @@ const Nav = function() {
   const HandleSignOut = () => {
     navigate("/", {replace: true});
   };
-    
+
   const { toggleTheme } = useThemeContext();
+  const { theme } = useThemeContext();
+  const [changeTheme, setChangeTheme] = useState(false);
+  const toggleThemes = () => {
+    if (changeTheme) {
+      setChangeTheme(false);
+    } else {
+      setChangeTheme(true);
+    }
+  };
 
-
+  
   return (
-    <MainNav>
+    <MainNav style={{ backgroundColor: theme.background, color: theme.color }}>
       <NavLogo>
         <LogoImage onClick={HandleLogoClick} src={logo} alt="logo" />
       </NavLogo>
@@ -67,18 +75,19 @@ const Nav = function() {
             <MenuItem>
               <MenuLink onClick={HandleSignOut}>Выйти</MenuLink>
             </MenuItem>
-            {themes.dark && (
+            {!changeTheme ? (
               <MenuItem>
                 <ThemeDiv onClick={toggleTheme}>
-                  <ThemeSvg src={dark} alt= "dark"/>
+                  <ThemeSvg src={dark} alt= "dark" onClick={toggleThemes}/>
                 </ThemeDiv>
               </MenuItem>
-            )}
+            ) : (
             <MenuItem>
                 <ThemeDiv onClick={toggleTheme}>
-                  <ThemeSvg src={light} alt= "light"/>
+                  <ThemeSvg src={light} alt= "light" onClick={toggleThemes}/>
                 </ThemeDiv>
               </MenuItem> 
+            )}
           </MenuList>
         </NavMenu>
       )}

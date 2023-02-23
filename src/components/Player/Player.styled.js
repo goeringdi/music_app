@@ -18,6 +18,8 @@ export const BarPlayerProgress = styled.div`
     width: 100%;
     height: 5px;
     background: #2E2E2E;
+    z-index: 6;
+
 `;
 
 export const BarPlayerBlock = styled.div`
@@ -58,6 +60,7 @@ export const PlayerBtnPlay = styled.div`
     display: flex;
     align-items: center;
     margin-right: 23px;
+    
 `;
 
 
@@ -272,7 +275,34 @@ export const VolumeProgress = styled.div`
 export const VolumeProgressLine = styled.input`
     width: 109px;
     cursor: pointer;
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+        &:hover {
+    opacity: 1;
+    }
+    &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('../../img/icon/volumeProgress.svg');
+    cursor: pointer;
+    &::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: url('../../img/icon/volumeProgress.svg');
+    cursor: pointer;
+}
 `;
 export const ProgressInput = styled.input`
-    width: 100%
+    width: 100%;
 `;

@@ -4,12 +4,18 @@ import LogoBlack from "../img/LogoBlack.png";
 import styled from "styled-components";
 
 
+export const RegisterContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;
+
+
+
 export const RegisterBlock = styled.div`
-    left: 900px;
-    top: 370px;
-    position: absolute;
     display: flex;
     flex-direction: column;
+    margin-top: 320px;
     align-content: center;
     align-items: center;
     width: 366px;
@@ -91,12 +97,15 @@ export const Register = function() {
 
 
     return (
-        <RegisterBlock >
-            <LogoImg src={LogoBlack} alt='Logo'/>
-            <RegisterInput placeholder='Логин'></RegisterInput>
-            <RegisterInput placeholder='Пароль'></RegisterInput>
-            <RegisterInput placeholder='Повторите пароль'></RegisterInput>
-            <RegisterButton onClick={handleRegisterButton}>Зарегистрироваться</RegisterButton>
-        </RegisterBlock>
+        <RegisterContainer>
+            <RegisterBlock >
+                <LogoImg src={LogoBlack} alt='Logo'/>
+                <RegisterInput placeholder='Логин'></RegisterInput>
+                <RegisterInput placeholder='Пароль'></RegisterInput>
+                <RegisterInput placeholder='Повторите пароль'></RegisterInput>
+                <RegisterButton onClick={handleRegisterButton}>Зарегистрироваться</RegisterButton>
+            </RegisterBlock>
+        </RegisterContainer>
+        
     )
 }
