@@ -7,7 +7,7 @@ function BoxImg({ children }: {children: React.ReactNode}) {
                 lineHeight: 5,
                 rowGap: '12px',
                 marginTop: '62x',
-                marginLeft: '60px',
+                marginLeft: '108px',
                 width: 51,
                 height: 51,
             }}

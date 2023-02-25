@@ -1,11 +1,12 @@
-import Header from '../components/Header/Header'
-import React from 'react'
+import Header from '../components/Header/Header';
+import React from 'react';
 import {
   CenterBlockSearch,
   SearchSvg,
   SearchText,
   CenterBlockH2,
-} from '../components/MenuBar/MenuBar.styled'
+  MainCenterBlock,
+} from '../components/MenuBar/MenuBar.styled';
 import {
   CenterBlockContent,
   ContentTitle,
@@ -30,20 +31,13 @@ import {
   TrackTime,
   TrackTimeSvg,
   TrackTimeText,
-} from '../components/MenuBar/MenuBar1.styled'
-import watch from '../img/icon/watch.svg'
-import note from '../img/icon/note.svg'
-import like from '../img/icon/like.svg'
-import search from '..//img/icon/search.svg'
-import { Main } from '../App.styled'
-import Player from '../components/Player/Player'
-import styled from 'styled-components'
-
-export const MainCenterBlock = styled.div`
-  width: auto;
-  flex-grow: 3;
-  padding: 20px 210px 20px 111px;
-`
+} from '../components/MenuBar/MenuBar1.styled';
+import watch from '../img/icon/watch.svg';
+import note from '../img/icon/note.svg';
+import like from '../img/icon/like.svg';
+import search from '..//img/icon/search.svg';
+import { Main } from '../App.styled';
+import Player from '../components/Player/Player';
 
 export const Indi = function () {
   return (

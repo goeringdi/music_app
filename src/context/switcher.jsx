@@ -1,5 +1,6 @@
 import {useState} from "react"
-import Header from '../components/Header/Header'
+import { HundredHits } from "../pages/HundredHits";
+import {MainPage} from '../pages/Main'
 import { ThemeContext, themes } from "./theme"
 
 export const  ChangeThemeTrack= () => {
@@ -16,7 +17,8 @@ export const  ChangeThemeTrack= () => {
 
     return (
       <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>        
-          <Header />
+          < MainPage />
+          < HundredHits />
       </ThemeContext.Provider>
 
     );

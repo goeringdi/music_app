@@ -2,13 +2,21 @@ import React, {useContext} from "react";
 export const themes = {
     light: {
       color: '#000000',
-      background: "#fff",      
+      border: '1px solid #000000',
+      background: "#fff", 
       colorA:"#B1B1B1",
-      
+      placeholder: '#000000',
+      backgroundNote: '#F6F4F4',
+      backgroundHeader: '#F6F5F3',
+      hoverButton:'#580EA2',
     },
     dark: {
       color: '#fff',
+      border: '1px solid #FFFFFF',
       background: "#181818",
+      backgroundNote: '#313131',
+      hoverButton: '#D9B6FF'
+
     },
   };
   

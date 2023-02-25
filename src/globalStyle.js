@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+export const GlobalStyle = createGlobalStyle `
 * {
     margin: 0;
     padding: 0;
@@ -12,7 +15,8 @@
 a,
 a:visited {
     text-decoration: none;
-    font-family: 'StratosSkyeng', sans-serif;
+    underline: none;
+    font-family: 'StratosSkyeng';
     cursor: pointer;
 }
 
@@ -27,20 +31,17 @@ ul li {
 
 
 
--------------------------------//
 
-========== fonts ========
+
 @font-face {
     font-family: 'StratosSkyeng';
     src: local('StratosSkyeng'), local('StratosSkyeng'),
-        url('../fonts/StratosSkyeng.woff2') format('woff2'),
-        url('../fonts/StratosSkyeng.woff') format('woff'),
-        url('../fonts/StratosSkyeng.ttf') format('truetype');
+        url('../../build/fonts/Stratos-Regular.woff2') format('woff2'),
+        url('../../build/fonts/Stratos-Regular.woff') format('woff'),
     font-weight: 400;
     font-style: normal;
 }
 
---------------------------
 
 html,
 body {
@@ -50,4 +51,4 @@ body {
     color: #FFFFFF;
 
 }
-
+  `

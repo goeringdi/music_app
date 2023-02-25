@@ -5,6 +5,7 @@ import {
   SearchSvg,
   SearchText,
   CenterBlockH2,
+  MainCenterBlock,
 } from '../components/MenuBar/MenuBar.styled'
 import {
   CenterBlockContent,
@@ -37,13 +38,7 @@ import like from '../img/icon/like.svg'
 import search from '..//img/icon/search.svg'
 import { Main } from '../App.styled'
 import Player from '../components/Player/Player'
-import styled from 'styled-components'
 
-export const MainCenterBlock = styled.div`
-  width: auto;
-  flex-grow: 3;
-  padding: 20px 210px 20px 111px;
-`
 
 export const PlaylistOfTheDay = function () {
   return (

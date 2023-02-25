@@ -35,7 +35,7 @@ export const SearchText = styled.input`
     color: #FFFFFF;
     &::placeholder {
         background-color: transparent;
-        color: #FFFFFF;
+        color: ${props => props.placeholder};
         font-style: normal;
         font-weight: 400;
         font-size: 16px;
@@ -72,18 +72,18 @@ export const Filter1 = styled.div`
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    border: 1px solid #FFFFFF;
+    border: ${props => props.border};
     border-radius: 60px;
     padding: 6px 20px;
     cursor: pointer;
     &:active {
-        border-color: #AD61FF;
-        color: #AD61FF;
+        border-color: #D9B6FF;
+        color: #D9B6FF;
         cursor: pointer;
     }
     &:hover {
-        border-color: #D9B6FF;
-        color: #D9B6FF;
+        border-color: ${props => props.hover};
+        color: ${props => props.hover};
         cursor: pointer;
     }
     &:not(:last-child) {
@@ -96,18 +96,18 @@ font-style: normal;
 font-weight: 400;
 font-size: 16px;
 line-height: 24px;
-border: 1px solid #FFFFFF;
+border: ${props => props.border};
 border-radius: 60px;
 padding: 6px 20px;
 cursor: pointer;
 &:active {
-    border-color: #AD61FF;
-    color: #AD61FF;
+    border-color: #D9B6FF;
+    color: #D9B6FF;
     cursor: pointer;
 }
 &:hover {
-    border-color: #D9B6FF;
-    color: #D9B6FF;
+    border-color: ${props => props.hover};
+    color: ${props => props.hover};
     cursor: pointer;
 }
 &:not(:last-child) {
@@ -120,18 +120,18 @@ font-style: normal;
 font-weight: 400;
 font-size: 16px;
 line-height: 24px;
-border: 1px solid #FFFFFF;
+border: ${props => props.border};
 border-radius: 60px;
 padding: 6px 20px;
 cursor: pointer;
 &:active {
-    border-color: #AD61FF;
-    color: #AD61FF;
+    border-color: #D9B6FF;
+    color: #D9B6FF;
     cursor: pointer;
 }
 &:hover {
-    border-color: #D9B6FF;
-    color: #D9B6FF;
+    border-color: ${props => props.hover};
+    color: ${props => props.hover};
     cursor: pointer;
 }
 &:not(:last-child) {

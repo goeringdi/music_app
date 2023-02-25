@@ -14,11 +14,14 @@ import BoxLike from '../BoxSkeleton/BoxLike';
 import BoxTime from '../BoxSkeleton/BoxTime';
 import { MainCenterBlock } from './MenuBar.styled';
 import { CenterBlockContent, ContentPlaylist, ContentTitle, PlaylistItem, PlaylistTitleCol1, PlaylistTitleCol2, PlaylistTitleCol3, PlaylistTitleCol4, PlaylistTitleSvg, PlaylistTrack, TrackAlbum, TrackAlbumLink, TrackAuthor, TrackAuthorLink, TrackTime, TrackTimeSvg, TrackTimeText, TrackTitle, TrackTitleImage, TrackTitleLink, TrackTitleSpan, TrackTitleSvg, TrackTitleText } from './MenuBar1.styled';
+import { useThemeContext } from '../../context/theme';
 
 
 const { useState } = React;
 
 const MenuBar = function () {
+  const { theme } = useThemeContext();
+
 
     const [isLoading, setIsLoading] = useState(true);
     const toggleVisibilitySkeleton = () => setIsLoading(false);
@@ -80,18 +83,18 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Guilt 
                                     <TrackTitleSpan></TrackTitleSpan>
                                 </TrackTitleLink>
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">Nero</TrackAuthorLink>
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">Nero</TrackAuthorLink>
                         </TrackAuthor>
                         <TrackAlbum>
                             <TrackAlbumLink href="http://">Welcome Reality</TrackAlbumLink>
@@ -105,18 +108,18 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>                         
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Elektro 
                                     <TrackTitleSpan></TrackTitleSpan>
                                 </TrackTitleLink>
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 Dynoro, Outwork, Mr. Gee
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -136,18 +139,18 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>                         
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     I’m Fire  
                                     <TrackTitleSpan></TrackTitleSpan>
                                 </TrackTitleLink>
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 Ali Bakgor
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -167,11 +170,11 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Non Stop 
                                     <TrackTitleSpan>
                                         (Remix)
@@ -180,7 +183,7 @@ const MenuBar = function () {
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink>
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }}>
                                 Стоункат, Psychopath
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -200,11 +203,11 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Run Run 
                                     <TrackTitleSpan>
                                         (feat. AR/CO)
@@ -213,7 +216,7 @@ const MenuBar = function () {
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 Jaded, Will Clarke, AR/CO
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -233,11 +236,11 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Eyes on Fire 
                                     <TrackTitleSpan>
                                         (Zeds Dead Remix)
@@ -246,7 +249,7 @@ const MenuBar = function () {
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 Blue Foundation, Zeds Dead
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -266,11 +269,11 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Mucho Bien 
                                     <TrackTitleSpan>
                                         (Hi Profile Remix)
@@ -279,7 +282,7 @@ const MenuBar = function () {
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 HYBIT, Mr. Black, Offer Nissim, Hi Profile
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -299,18 +302,18 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Knives n Cherries 
                                     <TrackTitleSpan></TrackTitleSpan>
                                 </TrackTitleLink>
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 minthaze
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -330,18 +333,18 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     How Deep Is Your Love 
                                     <TrackTitleSpan></TrackTitleSpan>
                                 </TrackTitleLink>
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 Calvin Harris, Disciples
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -361,18 +364,18 @@ const MenuBar = function () {
                 <PlaylistItem>
                     <PlaylistTrack>
                         <TrackTitle>
-                            <TrackTitleImage>
+                            <TrackTitleImage background={theme.backgroundNote}>
                                 <TrackTitleSvg src={note} alt="music"/>
                             </TrackTitleImage>
                             <TrackTitleText>
-                                <TrackTitleLink href="http://">
+                                <TrackTitleLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                     Morena 
                                     <TrackTitleSpan></TrackTitleSpan>
                                 </TrackTitleLink>
                             </TrackTitleText>
                         </TrackTitle>
                         <TrackAuthor>
-                            <TrackAuthorLink href="http://">
+                            <TrackAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                                 Tom Boxer
                             </TrackAuthorLink>
                         </TrackAuthor>
@@ -386,30 +389,6 @@ const MenuBar = function () {
                             <TrackTimeText>
                                 3:36
                             </TrackTimeText>
-                        </TrackTime>
-                    </PlaylistTrack>
-                </PlaylistItem>
-                <PlaylistItem>
-                    <PlaylistTrack>
-                        <TrackTitle>
-                            <TrackTitleImage>
-                                <TrackTitleSvg src={note} alt="music"/>
-                            </TrackTitleImage>
-                            <TrackTitleText>
-                                <TrackTitleLink href="http://"> 
-                                <TrackTitleSpan></TrackTitleSpan>
-                                </TrackTitleLink>
-                            </TrackTitleText>
-                        </TrackTitle>
-                        <TrackAuthor>
-                            <TrackAuthorLink href="http://"></TrackAuthorLink>
-                        </TrackAuthor>
-                        <TrackAlbum>
-                            <TrackAlbumLink href="http://"></TrackAlbumLink>
-                        </TrackAlbum>
-                        <TrackTime>
-                            <TrackTimeSvg src={like} alt="time"/>
-                            <TrackTimeText></TrackTimeText>
                         </TrackTime>
                     </PlaylistTrack>
                 </PlaylistItem>

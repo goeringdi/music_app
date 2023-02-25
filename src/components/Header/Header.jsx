@@ -54,7 +54,7 @@ const Nav = function() {
 
   
   return (
-    <MainNav style={{ backgroundColor: theme.background, color: theme.color }}>
+    <MainNav style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
       <NavLogo>
         <LogoImage onClick={HandleLogoClick} src={logo} alt="logo" />
       </NavLogo>
@@ -67,13 +67,13 @@ const Nav = function() {
         <NavMenu>
           <MenuList>
             <MenuItem>
-              <MenuLink onClick={HandleMainLink}>Главная</MenuLink>
+              <MenuLink style={{ backgroundColor: theme.backgroundHeader, color: theme.color }} onClick={HandleMainLink}>Главная</MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink onClick={HandleMyTracks}>Мой плейлист</MenuLink>
+              <MenuLink style={{ backgroundColor: theme.backgroundHeader, color: theme.color }} onClick={HandleMyTracks}>Мой плейлист</MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink onClick={HandleSignOut}>Выйти</MenuLink>
+              <MenuLink style={{ backgroundColor: theme.backgroundHeader, color: theme.color }} onClick={HandleSignOut}>Выйти</MenuLink>
             </MenuItem>
             {!changeTheme ? (
               <MenuItem>

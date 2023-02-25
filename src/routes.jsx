@@ -2,13 +2,14 @@ import { Routes, Route } from "react-router-dom";
 import { HundredHits } from "./pages/HundredHits";
 import { Indi } from "./pages/Indi";
 import { Login } from "./pages/Login";
-import { MainPage } from "./pages/Main";
+// import { MainPage } from "./pages/Main";
 import { MyTracks } from "./pages/MyTracks";
 import { NotFound } from "./pages/Notfound";
 import { PlaylistOfTheDay } from "./pages/PlaylistOfTheDay";
 import { Register } from "./pages/Registration";
 import { ProtectedRoute } from "./protected-route";
 import Cookies from 'js-cookie';
+import { ChangeThemeTrack } from "./context/switcher";
 // import {ChangeTheme} from './context/switcher;'
 
 
@@ -25,7 +26,7 @@ console.log(Token)
         path="/main"
         element={
           <ProtectedRoute isAllowed={Boolean(Token)}>
-            <MainPage />
+            <ChangeThemeTrack />
           </ProtectedRoute>
         }
       />

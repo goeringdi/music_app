@@ -1,24 +1,25 @@
-import playlist01 from '../../img/playlist01.png'
-import playlist02 from '../../img/playlist02.png'
-import playlist03 from '../../img/playlist03.png'
-import BoxSideBar from '../BoxSkeleton/BoxSideBar'
-import { SkeletonTheme } from 'react-loading-skeleton'
-import 'react-loading-skeleton/dist/skeleton.css'
-import Skeleton from 'react-loading-skeleton'
-import React from 'react'
-import { useEffect } from 'react'
+import playlist01 from '../../img/playlist01.png';
+import exitDark from '../../img/icon/exitDark.svg';
+import playlist02 from '../../img/playlist02.png';
+import playlist03 from '../../img/playlist03.png';
+import BoxSideBar from '../BoxSkeleton/BoxSideBar';
+import { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
+import Skeleton from 'react-loading-skeleton';
+import React from 'react';
+import { useEffect } from 'react';
 import {
   MainSidebar,
-  SidebarAvatar,
+  SidebarExit,
   SidebarBlock,
   SidebarImg,
   SidebarItem,
   SidebarLink,
   SidebarList,
   SidebarPersonal,
-  SidebarPersonalName,
-} from './SideBar.styled'
-import { useNavigate } from 'react-router-dom'
+} from './SideBar.styled';
+import { useNavigate } from 'react-router-dom';
+
 
 const { useState } = React
 
@@ -40,6 +41,10 @@ const SideBar = function () {
   const [isLoading, setIsLoading] = useState(true)
   const toggleVisibilitySkeleton = () => setIsLoading(false)
 
+  const HandleSignOut = () => {
+    navigate("/", {replace: true});
+  };
+
   useEffect(() => {
     let timeout = setTimeout(() => toggleVisibilitySkeleton(), 3000)
     return () => clearTimeout(timeout)
@@ -58,8 +63,7 @@ const SideBar = function () {
   return (
     <MainSidebar>
       <SidebarPersonal>
-        <SidebarPersonalName>Sergey.Ivanov</SidebarPersonalName>
-        <SidebarAvatar></SidebarAvatar>
+        <SidebarExit onClick={HandleSignOut} src={exitDark} alt="exit" />
       </SidebarPersonal>
       <SidebarBlock>
         <SidebarList>

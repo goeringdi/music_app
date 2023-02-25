@@ -144,12 +144,13 @@ export const TrackPlayContain = styled.div`
 export const TrackPlayImage = styled.div`
     width: 51px;
     height: 51px;
-    background-color: #313131;
+    background: ${props => props.background};
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 12px;
     grid-area: image;
+    margin-left: 170px;
 `;
 
 
@@ -277,7 +278,7 @@ export const VolumeProgressLine = styled.input`
     cursor: pointer;
     -webkit-appearance: none;
     width: 100%;
-    height: 6px;
+    height: 1px;
     border-radius: 5px;
     background: #d3d3d3;
     outline: none;
