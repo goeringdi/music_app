@@ -32,11 +32,10 @@ const toggleVisibilityYear = () => {
 }
 
 const { theme } = useThemeContext();
-
     return (
         <MainCenterBlock>
         <CenterBlockSearch>
-            <SearchSvg src={search} alt= "search"/>
+            <SearchSvg  src={search} alt= "search"/>
             <SearchText placeholderColor={theme.placeholder}   type="search" placeholder="Поиск" name="search"/>
         </CenterBlockSearch>
         <CenterBlockH2>Треки</CenterBlockH2>

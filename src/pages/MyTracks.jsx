@@ -1,12 +1,8 @@
-import Header from '../components/Header/Header'
-import React from 'react'
+import React from 'react';
 import {
   MainCenterBlock,
-  CenterBlockSearch,
-  SearchSvg,
-  SearchText,
   CenterBlockH2,
-} from '../components/MenuBar/MenuBar.styled'
+} from '../components/MenuBar/MenuBar.styled';
 import {
   CenterBlockContent,
   ContentTitle,
@@ -35,19 +31,12 @@ import {
 import watch from '../img/icon/watch.svg';
 import note from '../img/icon/note.svg';
 import like from '../img/icon/like.svg';
-import search from '..//img/icon/search.svg';
 import { Main } from '../App.styled';
-import Player from '../components/Player/Player';
 
 export const MyTracks = function () {
   return (
     <Main>
-      <Header />
       <MainCenterBlock>
-        <CenterBlockSearch>
-          <SearchSvg src={search} alt="search" />
-          <SearchText type="search" placeholder="Поиск" name="search" />
-        </CenterBlockSearch>
         <CenterBlockH2>Мои треки</CenterBlockH2>
         <CenterBlockContent>
           <ContentTitle>
@@ -166,7 +155,6 @@ export const MyTracks = function () {
           </ContentPlaylist>
         </CenterBlockContent>
       </MainCenterBlock>
-      <Player />
     </Main>
   )
 }

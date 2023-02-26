@@ -1,7 +1,6 @@
-import {useState} from "react"
-// import { HundredHits } from "../pages/HundredHits";
-import {MainPage} from '../pages/Main'
-import { ThemeContext, themes } from "./theme"
+import {useState} from "react";
+import {MainPage} from '../pages/Main';
+import { ThemeContext, themes } from "./theme";
 
 export const  ChangeThemeTrack= () => {
   const [currentTheme, setCurrentTheme] = useState(themes.dark);
@@ -18,7 +17,6 @@ export const  ChangeThemeTrack= () => {
     return (
       <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>        
           < MainPage />
-          {/* < HundredHits /> */}
       </ThemeContext.Provider>
 
     );

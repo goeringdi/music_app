@@ -1,9 +1,5 @@
-import Header from '../components/Header/Header';
 import React from 'react';
 import {
-  CenterBlockSearch,
-  SearchSvg,
-  SearchText,
   CenterBlockH2,
   MainCenterBlock,
 } from '../components/MenuBar/MenuBar.styled';
@@ -35,19 +31,16 @@ import {
 import watch from '../img/icon/watch.svg';
 import note from '../img/icon/note.svg';
 import like from '../img/icon/like.svg';
-import search from '..//img/icon/search.svg';
 import { Main } from '../App.styled';
-import Player from '../components/Player/Player';
+import { useThemeContext } from '../context/theme';
+
 
 export const Indi = function () {
+  const { theme } = useThemeContext();
+
   return (
-    <Main>
-      <Header />
-      <MainCenterBlock>
-        <CenterBlockSearch>
-          <SearchSvg src={search} alt="search" />
-          <SearchText type="search" placeholder="Поиск" name="search" />
-        </CenterBlockSearch>
+    <Main style={{ backgroundColor: theme.background, color: theme.color }}>
+      <MainCenterBlock style={{ backgroundColor: theme.background, color: theme.color }}>
         <CenterBlockH2>Мои треки</CenterBlockH2>
         <CenterBlockContent>
           <ContentTitle>
@@ -166,7 +159,6 @@ export const Indi = function () {
           </ContentPlaylist>
         </CenterBlockContent>
       </MainCenterBlock>
-      <Player />
     </Main>
   )
 }
