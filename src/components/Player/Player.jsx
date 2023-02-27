@@ -86,6 +86,9 @@ const Player = function () {
     <Bar style={{ backgroundColor: theme.background, color: theme.color }}>
       <BarContent>
         <BarPlayerProgress style={{ backgroundColor: theme.background, color: theme.color }}>
+    <Bar>
+      <BarContent>
+        <BarPlayerProgress>
         <ProgressInput
               type="range"
               min="0"

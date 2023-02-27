@@ -22,6 +22,7 @@ export const Login = function() {
             alert ('Неправильный логин или пароль');
             setTextLogin('');
             setTextPass('');
+            
         }
     };
 

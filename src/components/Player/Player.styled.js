@@ -307,3 +307,6 @@ export const VolumeProgressLine = styled.input`
 export const ProgressInput = styled.input`
     width: 100%;
 `;
+export const ProgressInput = styled.input`
+    width: 100%
+`;
