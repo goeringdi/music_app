@@ -83,12 +83,9 @@ const Player = function () {
     }
   };
   return ( 
-    <Bar style={{ backgroundColor: theme.background, color: theme.color }}>
+<Bar style={{ backgroundColor: theme.background, color: theme.color }}>
       <BarContent>
         <BarPlayerProgress style={{ backgroundColor: theme.background, color: theme.color }}>
-    <Bar>
-      <BarContent>
-        <BarPlayerProgress>
         <ProgressInput
               type="range"
               min="0"
@@ -157,7 +154,7 @@ const Player = function () {
                 <VolumeSvg src={volume} alt="volume" />
               </VolumeImage>
               <VolumeProgress>
-                <VolumeProgressLine type="range" name="range"  />
+                <VolumeProgressLine background={theme.backgroundVolume} type="range" name="range"  />
               </VolumeProgress>
             </VolumeContent>
           </BarVolumeBlock>
