@@ -1,5 +1,5 @@
 import search from '../../img/icon/search.svg';
-// import searchLight from '../../img/icon/searchLight.svg';
+import logo from '../../img/logo.png';
 
 import 'react-loading-skeleton/dist/skeleton.css';
 import { CenterBlockSearch, MainCenterBlock, SearchSvg, SearchText} from './MenuBar.styled'
@@ -14,7 +14,11 @@ console.log(theme)
     return (
         <MainCenterBlock>
         <CenterBlockSearch>
-            <SearchSvg  src={search} alt= "search"/>
+            {theme.colorA ? (
+            <SearchSvg  src={logo} alt= "search"/>               
+            ) : (
+            <SearchSvg  src={search} alt= "search"/>               
+            )}
             <SearchText placeholderColor={theme.placeholder}   type="search" placeholder="Поиск" name="search"/>
         </CenterBlockSearch>
     </MainCenterBlock>

@@ -19,8 +19,8 @@ import {
   SidebarPersonal,
 } from './SideBar.styled';
 import { useNavigate } from 'react-router-dom';
-// import { useThemeContext } from '../../context/theme';
-// import exitLight from '../../img/icon/exitLight.svg';
+import { useThemeContext } from '../../context/theme';
+import exitLight from '../../img/icon/exitLight.svg';
 
 
 const { useState } = React;
@@ -64,16 +64,16 @@ const SideBar = function () {
     )
   }
 
-  // const { theme } = useThemeContext();
+  const { theme } = useThemeContext();
 
   return (
     <MainSidebar>
       <SidebarPersonal>
-      {/* {theme === 'light' ? (
+      {theme.colorA ? (
         <SidebarExit onClick={HandleSignOut} src={exitLight} alt="exit" />
-        ) : ( */}
+        ) : ( 
         <SidebarExit onClick={HandleSignOut} src={exitDark} alt="exit" />
-      {/* )} */}
+      )}
       </SidebarPersonal>
       <SidebarBlock>
         <SidebarList>
