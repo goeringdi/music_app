@@ -1,4 +1,6 @@
 import logo from '../../img/logo.png';
+import logoBlack from '../../img/LogoBlack.png';
+
 import React from 'react';
 import {
   BurgerLine,
@@ -56,7 +58,11 @@ const Nav = function() {
   return (
     <MainNav style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
       <NavLogo>
+      {theme.colorA ? (
+        <LogoImage onClick={HandleLogoClick} src={logoBlack} alt="logo" />
+      ) : (
         <LogoImage onClick={HandleLogoClick} src={logo} alt="logo" />
+      )}
       </NavLogo>
       <NavBurger onClick={toggleVisibility} role="presentation">
         <BurgerLine></BurgerLine>
