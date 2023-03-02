@@ -1,7 +1,7 @@
-import Nav from '../components/Header/Header';
+// import Nav from '../components/Header/Header';
 import MenuBar from '../components/MenuBar/MenuBar1'
 import SideBar from '../components/SideBar/SideBar'
-import Player from '../components/Player/Player'
+// import Player from '../components/Player/Player'
 import MenuBarHeader from '../components/MenuBar/MenuBar'
 import { MainCenterBlock } from '../components/MenuBar/MenuBar.styled'
 import { Main } from '../App.styled'
@@ -13,13 +13,13 @@ export const MainPage = function () {
 
   return (
     <Main style={{ backgroundColor: theme.background, color: theme.color }}>
-      <Nav />
+      {/* <Nav /> */}
       <MainCenterBlock>
         <MenuBarHeader />
         <MenuBar />
       </MainCenterBlock>
       <SideBar />
-      <Player />
+      {/* <Player /> */}
     </Main>
   )
 }

@@ -8,15 +8,17 @@ import { PlaylistOfTheDay } from "./pages/PlaylistOfTheDay";
 import { Register } from "./pages/Registration";
 import { ProtectedRoute } from "./protected-route";
 import Cookies from 'js-cookie';
-import { ChangeThemeTrack } from "./context/switcher";
+// import { ChangeThemeTrack } from "./context/switcher";
 import { Outlet } from 'react-router-dom';
 import { Main } from './App.styled';
 import Nav from './components/Header/Header';
 import { MainCenterBlock } from './components/MenuBar/MenuBar.styled';
 import MenuBarHeader from './components/MenuBar/MenuBar';
 import Player from './components/Player/Player';
+import { MainPage } from "./pages/Main";
 
-const Layout = () => {
+
+export const Layout = () => {
    return (
       <Main>
         <Nav />
@@ -43,7 +45,8 @@ console.log(Token)
           path="/main"
           element={
                 <ProtectedRoute isAllowed={Boolean(Token)}>
-                  <ChangeThemeTrack />
+                  {/* <ChangeThemeTrack /> */}
+                  <MainPage/>  
                 </ProtectedRoute>
                 }
               />

@@ -5,6 +5,7 @@ import Cookies from 'js-cookie';
 import {LoginContainer, LoginBlock, LogoImg, LoginInput, PassInput, SignInButton, RegisterButton } from '../styled/login.styled'
 
 
+
 export const Login = function() {
 
     const navigate = useNavigate();
@@ -31,6 +32,7 @@ export const Login = function() {
 
     const [textLogin, setTextLogin] = useState('');
     const [textPass, setTextPass] = useState('');
+ 
 
     return (
         <LoginContainer>
