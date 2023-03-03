@@ -47,6 +47,7 @@ const SideBar = function () {
     navigate("/", {replace: true});
   };
 
+  const { theme } = useThemeContext();
 
   useEffect(() => {
     let timeout = setTimeout(() => toggleVisibilitySkeleton(), 3000)
@@ -64,7 +65,6 @@ const SideBar = function () {
     )
   }
 
-  const { theme } = useThemeContext();
 
   return (
     <MainSidebar>
