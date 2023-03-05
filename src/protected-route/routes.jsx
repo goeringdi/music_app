@@ -1,20 +1,20 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { HundredHits } from "./pages/HundredHits";
-import { Indi } from "./pages/Indi";
-import { Login } from "./pages/Login";
-import { MyTracks } from "./pages/MyTracks";
-import { NotFound } from "./pages/Notfound";
-import { PlaylistOfTheDay } from "./pages/PlaylistOfTheDay";
-import { Register } from "./pages/Registration";
-import { ProtectedRoute } from "./protected-route";
-import Cookies from 'js-cookie';
-import { ChangeThemeTrack } from "./context/switcher";
+import { HundredHits } from "../pages/HundredHits";
+import { Indi } from "../pages/Indi";
+import { Login } from "../pages/Login";
+import { MyTracks } from "../pages/MyTracks";
+import { NotFound } from "../pages/Notfound";
+import { PlaylistOfTheDay } from "../pages/PlaylistOfTheDay";
+import { Register } from "../pages/Registration";
+import { ProtectedRoute } from ".";
+import { ChangeThemeTrack } from "../context/switcher";
 import { Outlet } from 'react-router-dom';
-import { Main } from './App.styled';
-import Nav from './components/Header/Header';
-import { MainCenterBlock } from './components/MenuBar/MenuBar.styled';
-import MenuBarHeader from './components/MenuBar/MenuBar';
-import Player from './components/Player/Player';
+import { Main } from '../App.styled';
+import Nav from '../components/Header/Header';
+import { MainCenterBlock } from '../components/MenuBar/MenuBar.styled';
+import MenuBarHeader from '../components/MenuBar/MenuBar';
+import Player from '../components/Player/Player';
+import { useSelector } from 'react-redux'
 
 const Layout = () => {
    return (
@@ -32,8 +32,7 @@ const Layout = () => {
 
 
 export const AppRoutes = () => {
-let Token = Cookies.get('token');
-console.log(Token)
+  const isLogin = useSelector((state) => state.auth.isLogin)
   return (
 <Router>
    <Routes>
@@ -42,7 +41,7 @@ console.log(Token)
        <Route
           path="/main"
           element={
-                <ProtectedRoute isAllowed={Boolean(Token)}>
+                <ProtectedRoute isLogin={isLogin}>
                   <ChangeThemeTrack />
                 </ProtectedRoute>
                 }

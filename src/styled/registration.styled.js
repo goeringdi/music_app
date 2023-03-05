@@ -82,3 +82,40 @@ export const RegisterButton = styled.button`
         background: #271A58;
     }
 `;
+export const ErrorMessage = styled.span`
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    max-width: 280px;
+`
+;
+
+export const ErrorNameMessage = styled.span`
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    max-width: 280px;
+    top: 128px;
+`
+;
+
+export const ErrorEmailMessage = styled.span`
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    max-width: 280px;
+    top: 190px;
+`
+;
+
+export const ErrorPasswordMessage = styled.span`
+    color: red;
+    font-size: 12px;
+    text-align: center;
+    position: absolute;
+    max-width: 280px;
+    top: 250px;
+`
+;

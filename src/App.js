@@ -1,6 +1,6 @@
 
 import { Container, Footer, Wrapper } from './App.styled';
-import { AppRoutes } from "./routes";
+import { AppRoutes } from "./protected-route/routes";
 
 function App() {
 
