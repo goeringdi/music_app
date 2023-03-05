@@ -19,9 +19,11 @@ import {
   SidebarPersonal,
 } from './SideBar.styled';
 import { useNavigate } from 'react-router-dom';
+import { useThemeContext } from '../../context/theme';
+import exitLight from '../../img/icon/exitLight.svg';
 
 
-const { useState } = React
+const { useState } = React;
 
 const SideBar = function () {
   const navigate = useNavigate()
@@ -45,6 +47,8 @@ const SideBar = function () {
     navigate("/", {replace: true});
   };
 
+  const { theme } = useThemeContext();
+
   useEffect(() => {
     let timeout = setTimeout(() => toggleVisibilitySkeleton(), 3000)
     return () => clearTimeout(timeout)
@@ -60,10 +64,16 @@ const SideBar = function () {
       </SkeletonTheme>
     )
   }
+
+
   return (
     <MainSidebar>
       <SidebarPersonal>
+      {theme.colorA ? (
+        <SidebarExit onClick={HandleSignOut} src={exitLight} alt="exit" />
+        ) : ( 
         <SidebarExit onClick={HandleSignOut} src={exitDark} alt="exit" />
+      )}
       </SidebarPersonal>
       <SidebarBlock>
         <SidebarList>

@@ -7,7 +7,7 @@ import Pause from '../../img/icon/pause.svg';
 import repeat from '../../img/icon/repeat.svg';
 import shuffle from '../../img/icon/shuffle.svg';
 import dislike from '../../img/icon/dislike.svg';
-import volume from '../../img/icon/volumeD.svg';
+import volume from '../../img/icon/volume.svg';
 import {
   Bar,
   BarContent,
@@ -53,8 +53,6 @@ import track from "./Bobby_Marleni_-_Dropin.mp3";
 import useSound from "use-sound";
 import { useThemeContext } from '../../context/theme';
 
-// import {  AiFillPauseCircle } from "react-icons/ai";
-// import { IconContext } from "react-icons";
 
 const Player = function () {
   const { theme } = useThemeContext();
