@@ -1,14 +1,16 @@
 import search from '../../img/icon/search.svg';
+// import searchLight from '../../img/icon/searchLight.svg';
 import React, {useState} from 'react';
 import ShowAuthor from '../Suggest/Author';
 import ShowYear from '../Suggest/Year';
 import ShowGenre from '../Suggest/Genre';
 import 'react-loading-skeleton/dist/skeleton.css';
 import {CenterBlockFilter, CenterBlockH2, Filter1, Filter2, Filter3, CenterBlockSearch, FilterTitle, MainCenterBlock, SearchSvg, SearchText} from './MenuBar.styled'
-import styled from 'styled-components';
+import { useThemeContext } from '../../context/theme';
 
 
 const MenuBarHeader = function () {
+
 const [visibleAuthors, setVisibleAuthors] = useState(true);
 const toggleVisibilityAuthors = () => {
     setVisibleAuthors(!visibleAuthors);
@@ -29,46 +31,33 @@ const toggleVisibilityYear = () => {
     setVisibleYear(!visibleYear);
 }
 
-const FilterButton1 = styled(Filter1) `
-    color: ${(!visibleAuthors) ? "#D9B6FF" : "white"};
-    border: ${(!visibleAuthors) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
-`;
-
-const FilterButton2 = styled(Filter2) `
-    color: ${(!visibleYear) ? "#D9B6FF" : "white"};
-    border: ${(!visibleYear) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
-`;
-
-const FilterButton3 = styled(Filter3) `
-    color: ${(!visibleGenre) ? "#D9B6FF" : "white"};
-    border: ${(!visibleGenre) ? " 1px solid #D9B6FF" : "1px solid #FFFFFF"};
-`;
+const { theme } = useThemeContext();
     return (
         <MainCenterBlock>
         <CenterBlockSearch>
-            <SearchSvg src={search} alt= "search"/>
-            <SearchText type="search" placeholder="Поиск" name="search"/>
+            <SearchSvg  src={search} alt= "search"/>
+            <SearchText placeholderColor={theme.placeholder}   type="search" placeholder="Поиск" name="search"/>
         </CenterBlockSearch>
         <CenterBlockH2>Треки</CenterBlockH2>
         <CenterBlockFilter>
         <FilterTitle>
             Искать по:
         </FilterTitle>
-        <FilterButton1 onClick={toggleVisibilityAuthors} role= "presentation">
+        <Filter1 border={theme.border} hover={theme.hoverButton} hoverBorderColor={theme.borderHover} onClick={toggleVisibilityAuthors} role= "presentation">
             исполнителю
-        </FilterButton1>
+        </Filter1>
        {!visibleAuthors && (
         <ShowAuthor />
        )}
-        <FilterButton2 onClick={toggleVisibilityYear} role= "presentation">
+        <Filter2 border={theme.border} hover={theme.hoverButton} hoverBorderColor={theme.borderHover} onClick={toggleVisibilityYear} role= "presentation">
             году выпуска
-        </FilterButton2>
+        </Filter2>
         {!visibleYear && (
         <ShowYear />
        )}
-        <FilterButton3  onClick={toggleVisibilityGenre} role= "presentation">
+        <Filter3 border={theme.border} hover={theme.hoverButton} onClick={toggleVisibilityGenre} role= "presentation">
             жанру
-        </FilterButton3>
+        </Filter3>
         {!visibleGenre && (
         <ShowGenre />
        )}

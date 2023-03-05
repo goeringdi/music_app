@@ -2,11 +2,12 @@ import { Container, Footer, Wrapper } from './App.styled';
 import { AppRoutes } from "./routes";
 
 function App() {
-  return ( 
+
+  return (
     <Wrapper>
       <Container>
-        <AppRoutes />
-        <Footer></Footer>
+          <AppRoutes />
+          <Footer></Footer>
       </Container>
     </Wrapper>
   )

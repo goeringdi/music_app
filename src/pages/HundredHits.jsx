@@ -1,11 +1,8 @@
-import Header from '../components/Header/Header'
-import React from 'react'
+import React from 'react';
 import {
-  CenterBlockSearch,
-  SearchSvg,
-  SearchText,
   CenterBlockH2,
-} from '../components/MenuBar/MenuBar.styled'
+  MainCenterBlock
+} from '../components/MenuBar/MenuBar.styled';
 import {
   CenterBlockContent,
   ContentTitle,
@@ -30,30 +27,21 @@ import {
   TrackTime,
   TrackTimeSvg,
   TrackTimeText,
-} from '../components/MenuBar/MenuBar1.styled'
-import watch from '../img/icon/watch.svg'
-import note from '../img/icon/note.svg'
-import like from '../img/icon/like.svg'
-import search from '..//img/icon/search.svg'
-import { Main } from '../App.styled'
-import Player from '../components/Player/Player'
-import styled from 'styled-components'
+} from '../components/MenuBar/MenuBar1.styled';
+import watch from '../img/icon/watch.svg';
+import note from '../img/icon/note.svg';
+import like from '../img/icon/like.svg';
+import { Main } from '../App.styled';
+import { useThemeContext } from '../context/theme';
 
-export const MainCenterBlock = styled.div`
-  width: auto;
-  flex-grow: 3;
-  padding: 20px 210px 20px 111px;
-`
+
 
 export const HundredHits = function () {
+  const { theme } = useThemeContext();
+
   return (
-    <Main>
-      <Header />
-      <MainCenterBlock>
-        <CenterBlockSearch>
-          <SearchSvg src={search} alt="search" />
-          <SearchText type="search" placeholder="Поиск" name="search" />
-        </CenterBlockSearch>
+    <Main style={{ backgroundColor: theme.background, color: theme.color }}>
+      <MainCenterBlock style={{ backgroundColor: theme.background, color: theme.color }}>
         <CenterBlockH2>Плейлист дня </CenterBlockH2>
         <CenterBlockContent>
           <ContentTitle>
@@ -172,7 +160,6 @@ export const HundredHits = function () {
           </ContentPlaylist>
         </CenterBlockContent>
       </MainCenterBlock>
-      <Player />
     </Main>
   )
 }

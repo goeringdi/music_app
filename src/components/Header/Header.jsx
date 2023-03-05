@@ -10,8 +10,13 @@ import {
   NavBurger,
   NavLogo,
   NavMenu,
+  ThemeDiv,
+  ThemeSvg
 } from './Header.styled';
 import { useNavigate } from "react-router-dom";
+import dark from '../../img/icon/dark.svg';
+import light from '../../img/icon/light.svg';
+import { useThemeContext } from '../../context/theme';
 
 
 const { useState } = React
@@ -35,12 +40,21 @@ const Nav = function() {
   const HandleSignOut = () => {
     navigate("/", {replace: true});
   };
-    
-    
 
+  const { toggleTheme } = useThemeContext();
+  const { theme } = useThemeContext();
+  const [changeTheme, setChangeTheme] = useState(false);
+  const toggleThemes = () => {
+    if (changeTheme) {
+      setChangeTheme(false);
+    } else {
+      setChangeTheme(true);
+    }
+  };
 
+  
   return (
-    <MainNav>
+    <MainNav style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
       <NavLogo>
         <LogoImage onClick={HandleLogoClick} src={logo} alt="logo" />
       </NavLogo>
@@ -53,14 +67,27 @@ const Nav = function() {
         <NavMenu>
           <MenuList>
             <MenuItem>
-              <MenuLink onClick={HandleMainLink}>Главная</MenuLink>
+              <MenuLink style={{ backgroundColor: theme.backgroundHeader, color: theme.color }} onClick={HandleMainLink}>Главная</MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink onClick={HandleMyTracks}>Мой плейлист</MenuLink>
+              <MenuLink style={{ backgroundColor: theme.backgroundHeader, color: theme.color }} onClick={HandleMyTracks}>Мой плейлист</MenuLink>
             </MenuItem>
             <MenuItem>
-              <MenuLink onClick={HandleSignOut}>Выйти</MenuLink>
+              <MenuLink style={{ backgroundColor: theme.backgroundHeader, color: theme.color }} onClick={HandleSignOut}>Выйти</MenuLink>
             </MenuItem>
+            {!changeTheme ? (
+              <MenuItem>
+                <ThemeDiv onClick={toggleTheme}>
+                  <ThemeSvg src={dark} alt= "dark" onClick={toggleThemes}/>
+                </ThemeDiv>
+              </MenuItem>
+            ) : (
+            <MenuItem>
+                <ThemeDiv onClick={toggleTheme}>
+                  <ThemeSvg src={light} alt= "light" onClick={toggleThemes}/>
+                </ThemeDiv>
+              </MenuItem> 
+            )}
           </MenuList>
         </NavMenu>
       )}

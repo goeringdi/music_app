@@ -1,13 +1,13 @@
-import note from '../../img/icon/note.svg'
-import like from '../../img/icon/like.svg'
-import prev from '../../img/icon/prev.svg'
-import Play from '../../img/icon/play.svg'
-import next from '../../img/icon/next.svg'
-import Pause from '../../img/icon/pause.svg'
-import repeat from '../../img/icon/repeat.svg'
-import shuffle from '../../img/icon/shuffle.svg'
-import dislike from '../../img/icon/dislike.svg'
-import volume from '../../img/icon/volume.svg'
+import note from '../../img/icon/note.svg';
+import like from '../../img/icon/like.svg';
+import prev from '../../img/icon/prev.svg';
+import Play from '../../img/icon/play.svg';
+import next from '../../img/icon/next.svg';
+import Pause from '../../img/icon/pause.svg';
+import repeat from '../../img/icon/repeat.svg';
+import shuffle from '../../img/icon/shuffle.svg';
+import dislike from '../../img/icon/dislike.svg';
+import volume from '../../img/icon/volumeD.svg';
 import {
   Bar,
   BarContent,
@@ -51,10 +51,14 @@ import {
 import { useState, useEffect } from 'react';
 import track from "./Bobby_Marleni_-_Dropin.mp3"; 
 import useSound from "use-sound";
+import { useThemeContext } from '../../context/theme';
+
 // import {  AiFillPauseCircle } from "react-icons/ai";
 // import { IconContext } from "react-icons";
 
 const Player = function () {
+  const { theme } = useThemeContext();
+
   const [isPlaying, setIsPlaying] = useState(false);
  
   const [seconds, setSeconds] = useState([]);
@@ -79,9 +83,9 @@ const Player = function () {
     }
   };
   return ( 
-    <Bar>
+<Bar style={{ backgroundColor: theme.background, color: theme.color }}>
       <BarContent>
-        <BarPlayerProgress>
+        <BarPlayerProgress style={{ backgroundColor: theme.background, color: theme.color }}>
         <ProgressInput
               type="range"
               min="0"
@@ -122,16 +126,16 @@ const Player = function () {
             </PlayerControls>
             <PlayerTrackPlay>
               <TrackPlayContain>
-                <TrackPlayImage>
+                <TrackPlayImage background={theme.backgroundNote}>
                   <TrackPlaySvg src={note} alt="music" />
                 </TrackPlayImage>
                 <TrackPlayAuthor>
-                  <TrackPlayAuthorLink href="http://">
+                  <TrackPlayAuthorLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">
                     Ты та...
                   </TrackPlayAuthorLink>
                 </TrackPlayAuthor>
                 <TrackPlayAlbum>
-                  <TrackPlayAlbumLink href="http://">Баста</TrackPlayAlbumLink>
+                  <TrackPlayAlbumLink style={{ backgroundColor: theme.background, color: theme.color }} href="http://">Баста</TrackPlayAlbumLink>
                 </TrackPlayAlbum>
               </TrackPlayContain>
               <TrackPlayLikeDis>
@@ -150,7 +154,7 @@ const Player = function () {
                 <VolumeSvg src={volume} alt="volume" />
               </VolumeImage>
               <VolumeProgress>
-                <VolumeProgressLine type="range" name="range" />
+                <VolumeProgressLine background={theme.backgroundVolume} type="range" name="range"  />
               </VolumeProgress>
             </VolumeContent>
           </BarVolumeBlock>
