@@ -13,6 +13,7 @@ export const Register = function() {
 
     const [userValues, setUserValues] = useState({
         username: '',
+        email: '',
         password: '',
     })
 
@@ -26,13 +27,20 @@ export const Register = function() {
         } else {
             alert('Пароли не совпадают')
         }
-        {isSuccess &&  navigate("/login", {replace: true})}
+        {isSuccess &&  navigate("/", {replace: true})}
     }
 
     const handleLoginChange = (e) => {
         setUserValues({
             ...userValues,
             username: e.target.value,
+        })
+    }
+
+    const handleEmailChange = (e) => {
+        setUserValues({
+            ...userValues,
+            email: e.target.value,
         })
     }
 
@@ -56,6 +64,12 @@ export const Register = function() {
                         <S.ErrorNameMessage>
                             {error.data.username[0]}
                         </S.ErrorNameMessage>
+                    )}
+                <RegisterInput placeholder="Email" type="text" onChange={handleEmailChange}></RegisterInput>
+                {error && error.data.email && (
+                        <S.ErrorEmailMessage>
+                            {error.data.email[0]}
+                        </S.ErrorEmailMessage>
                     )}
                 <RegisterInput placeholder='Пароль'  type="password" onChange={handlePasswordChange}></RegisterInput>
                 {error && error.data.password && (
