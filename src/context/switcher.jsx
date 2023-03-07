@@ -1,5 +1,5 @@
 import {useState} from "react";
-import {MainPage} from '../pages/Main';
+import Tracks from '../pages/Tracks/Main'
 import { ThemeContext, themes } from "./theme";
 
 export const  ChangeThemeTrack= () => {
@@ -16,7 +16,7 @@ export const  ChangeThemeTrack= () => {
 
     return (
       <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>        
-          < MainPage />
+          < Tracks />
       </ThemeContext.Provider>
 
     );

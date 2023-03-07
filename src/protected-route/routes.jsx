@@ -1,59 +1,38 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"
-import { HundredHits } from "../pages/HundredHits";
-import { Indi } from "../pages/Indi";
-import { Login } from "../pages/Login";
-import { MyTracks } from "../pages/MyTracks";
-import { NotFound } from "../pages/Notfound";
-import { PlaylistOfTheDay } from "../pages/PlaylistOfTheDay";
-import { Register } from "../pages/Registration";
-import { ProtectedRoute } from ".";
-import { ChangeThemeTrack } from "../context/switcher";
-import { Outlet } from 'react-router-dom';
-import { Main } from '../App.styled';
-import Nav from '../components/Header/Header';
-import { MainCenterBlock } from '../components/MenuBar/MenuBar.styled';
-import MenuBarHeader from '../components/MenuBar/MenuBar';
-import Player from '../components/Player/Player';
+import { Routes as ReactRoutes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import Login from '../pages/Login/Login'
+import Signup from '../pages/Signup/Signup'
+import { ChangeThemeTrack } from '../context/switcher'
+import SelectPlaylist from '../pages/SelectPlaylist/SelectPlaylist'
+import UserPlaylist from '../pages/UserPlaylist/UserPlaylist'
+import NotFound from '../pages/NotFound/NotFound'
+import ProtectedRoute from './index'
+import NavLayout from '../components/Layuot/NavLayout/NavLayout'
+import PlayerLayout from '../components/Layuot/PlayerLayout/PlayerLayout'
 
-const Layout = () => {
-   return (
-      <Main>
-        <Nav />
-        <MainCenterBlock>
-          <MenuBarHeader />
-          <Outlet/>
-        </MainCenterBlock>
-        <Player />
-      </Main>
-   )
+export default function Routes() {
+    const isLogin = useSelector((state) => state.auth.isLogin)
+
+    return (
+        <ReactRoutes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route element={<NavLayout />}>
+                <Route path="*" element={<NotFound />} />
+            </Route>
+            <Route path="/" element={<ProtectedRoute isLogin={isLogin} />}>
+                <Route element={<NavLayout />}>
+                    <Route element={<PlayerLayout />}>
+                        <Route index element={<ChangeThemeTrack />} />
+                        <Route path="tracks" element={<ChangeThemeTrack />} />
+                        <Route
+                            path="playlist/:id"
+                            element={<SelectPlaylist />}
+                        />
+                        <Route path="my_playlist" element={<UserPlaylist />} />
+                    </Route>
+                </Route>
+            </Route>
+        </ReactRoutes>
+    )
 }
-
-
-
-export const AppRoutes = () => {
-  const isLogin = useSelector((state) => state.auth.isLogin)
-  return (
-<Router>
-   <Routes>
-       <Route path="/" element={<Login />} />
-       <Route path="/register" element={<Register />} />
-       <Route
-          path="/main"
-          element={
-                <ProtectedRoute isLogin={isLogin}>
-                  <ChangeThemeTrack />
-                </ProtectedRoute>
-                }
-              />
-    <Route element={<Layout/>}>
-        <Route path="/mytracks" element={<MyTracks />} />
-        <Route path="/playlistoftheday" element={<PlaylistOfTheDay />} />
-        <Route path="/hundredhits" element={<HundredHits />} />
-        <Route path="/indi" element={<Indi />} />
-        <Route path="*" element={<NotFound />} />
-    </Route>
-  </Routes>
-</Router>
-  );
-};
