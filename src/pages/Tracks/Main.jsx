@@ -1,7 +1,7 @@
 import Search from '../../components/Search/Search'
 import Filter from '../../components/Filter/Filter/Filter'
 import Playlist from '../../components/Playlist/Playlist/Playlist'
-import Sidebar from '../../components/Sidebar/Sidebar'
+import Sidebar from '../../components/Sidebar/SideBar'
 import watch from '../../img/icon/watch.svg'
 import * as S from './styles'
 import { useThemeContext } from '../../context/theme'
