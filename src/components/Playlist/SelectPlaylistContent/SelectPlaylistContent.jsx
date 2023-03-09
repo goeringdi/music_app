@@ -12,7 +12,6 @@ import {
 import TrackSkeletons from '../../TrackSkeletons/TrackSkeletons'
 import * as S from './styles'
 import PropTypes from 'prop-types';
-import { useThemeContext } from '../../../context/theme'
 
 
 export default function SelectPlaylistContent({ playlistId }) {
@@ -21,7 +20,6 @@ export default function SelectPlaylistContent({ playlistId }) {
     const { data, isLoading, isSuccess } = useGetPlaylistByIdQuery(playlistId)
 
     const trackTitle = useSelector((state) => state.search.searchValue)
-    const { theme } = useThemeContext();
 
     useEffect(() => {
         dispatch(clearTracksId())
@@ -40,7 +38,7 @@ export default function SelectPlaylistContent({ playlistId }) {
 
     if (isSuccess) {
         return (
-            <S.PlaylistContent style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
+            <S.PlaylistContent>
                 {data?.items
                     .filter(({ name }) =>
                         name.toLowerCase().includes(trackTitle)

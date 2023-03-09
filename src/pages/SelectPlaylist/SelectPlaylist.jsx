@@ -3,7 +3,6 @@ import Search from '../../components/Search/Search'
 import SelectPlaylistContent from '../../components/Playlist/SelectPlaylistContent/SelectPlaylistContent'
 import watch from '../../img/icon/watch.svg'
 import * as S from './styles'
-import { useThemeContext } from '../../context/theme'
 
 
 
@@ -12,11 +11,10 @@ export default function SelectPlaylist() {
 
     const params = useParams()
     const playlistId = params.id
-    const { theme } = useThemeContext();
 
     return (
         <div>
-            <S.CenterBlock style={{ backgroundColor: theme.background, color: theme.color }}>
+            <S.CenterBlock >
                 <S.CenterBlockContent>
                     <Search />
                     <S.CenterBlockTitle>
