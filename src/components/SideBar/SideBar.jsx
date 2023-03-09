@@ -23,7 +23,7 @@ export default function Sidebar() {
       const navigate = useNavigate()
 
     return (
-        <S.Sidebar>
+        <S.Sidebar style={{ backgroundColor: theme.background, color: theme.color }}>
             <S.SidebarPersonal>
                 {theme.colorA ? (
                     <S.SidebarExit onClick={HandleSignOut} src={exitLight} alt="exit" />

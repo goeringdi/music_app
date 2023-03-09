@@ -12,10 +12,10 @@ export default function Tracks() {
 
     return (
         <>
-            <S.CenterBlock style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
+            <S.CenterBlock style={{ backgroundColor: theme.background, color: theme.color }}>
                 <S.CenterBlockContent>
                     <Search />
-                    <S.CenterBlockTitle>Треки</S.CenterBlockTitle>
+                    <S.CenterBlockTitle style={{ backgroundColor: theme.background, color: theme.color }}>Треки</S.CenterBlockTitle>
                     <Filter />
                     <S.TitleWrapper>
                         <S.TitleTrack>ТРЕК</S.TitleTrack>

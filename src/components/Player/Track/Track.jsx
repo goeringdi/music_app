@@ -4,15 +4,18 @@ import FavoriteButtons from '../FavoriteButtons/FavoriteButtons'
 import { useGetTrackByIdQuery } from '../../../api/musicApi'
 import { Skeleton } from '../../TrackSkeletons/styles'
 import * as S from './styles'
+import { useThemeContext } from '../../../context/theme'
+
 
 export default function Track() {
     const trackId = useSelector((state) => state.player.id)
     const { data, isLoading, isSuccess } = useGetTrackByIdQuery(trackId)
+    const { theme } = useThemeContext();
 
     return (
         <S.TrackWrapper>
             <S.TrackContainer>
-                <S.PlayImageWrapper>
+                <S.PlayImageWrapper background={theme.backgroundNote}>
                     <S.PlayIconImage src={note} alt="music" />
                 </S.PlayImageWrapper>
                 {isSuccess && (

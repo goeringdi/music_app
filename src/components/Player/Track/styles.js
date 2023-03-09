@@ -17,7 +17,7 @@ export const PlayImageWrapper = styled.div`
     position: relative;
     width: 51px;
     height: 51px;
-    background: #313131;
+    background:  ${props => props.background};
     display: flex;
     align-items: center;
     justify-content: center;

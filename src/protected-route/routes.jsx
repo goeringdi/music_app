@@ -2,13 +2,13 @@ import { Routes as ReactRoutes, Route } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import Login from '../pages/Login/Login'
 import Signup from '../pages/Signup/Signup'
-import { ChangeThemeTrack } from '../context/switcher'
 import SelectPlaylist from '../pages/SelectPlaylist/SelectPlaylist'
 import UserPlaylist from '../pages/UserPlaylist/UserPlaylist'
 import NotFound from '../pages/NotFound/NotFound'
 import ProtectedRoute from './index'
 import NavLayout from '../components/Layuot/NavLayout/NavLayout'
 import PlayerLayout from '../components/Layuot/PlayerLayout/PlayerLayout'
+import Tracks from '../pages/Tracks/Main'
 
 export default function Routes() {
     const isLogin = useSelector((state) => state.auth.isLogin)
@@ -23,8 +23,8 @@ export default function Routes() {
             <Route path="/" element={<ProtectedRoute isLogin={isLogin} />}>
                 <Route element={<NavLayout />}>
                     <Route element={<PlayerLayout />}>
-                        <Route index element={<ChangeThemeTrack />} />
-                        <Route path="tracks" element={<ChangeThemeTrack />} />
+                        <Route index element={<Tracks />} />
+                        <Route path="tracks" element={<Tracks />} />
                         <Route
                             path="playlist/:id"
                             element={<SelectPlaylist />}

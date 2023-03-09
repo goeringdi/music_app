@@ -10,6 +10,8 @@ import {
     deleteGenres,
 } from '../../../store/slices/filterSlice'
 import * as S from './styles'
+import { useThemeContext } from '../../../context/theme'
+
 
 export default function Filter() {
 
@@ -44,9 +46,11 @@ export default function Filter() {
         }
     }
 
+    const { theme } = useThemeContext();
+
     return (
-        <S.FilterWrapper>
-            <S.FilterTitle>Искать по:</S.FilterTitle>
+        <S.FilterWrapper style={{ backgroundColor: theme.background, color: theme.color }}>
+            <S.FilterTitle style={{ backgroundColor: theme.background, color: theme.color }}>Искать по:</S.FilterTitle>
             <S.ButtonWrapper 
                 onClick={() =>
                     setActive((prevState) =>
@@ -54,7 +58,7 @@ export default function Filter() {
                     )
                 }
             >
-                <Categories
+                <Categories 
                     text="исполнителю"
                     isActive={filteredByAuthor}
                     count={String(authorsValue.length)}

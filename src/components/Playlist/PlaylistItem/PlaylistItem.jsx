@@ -4,6 +4,7 @@ import { ReactComponent as LikeIcon } from '../../../img/icon/like.svg'
 import note from '../../../img/icon/note.svg'
 import * as S from './styles'
 import PropTypes from 'prop-types';
+import { useThemeContext } from '../../../context/theme'
 
 
 export default function PlaylistItem({
@@ -23,18 +24,19 @@ export default function PlaylistItem({
         dispatch(getTrackId(+e.target.id))
         dispatch(play(true))
     }
+    const { theme } = useThemeContext();
 
     return (
         <S.PlaylistItem>
             <S.Track onClick={(e) => playTrackHandler(e)}>
                 <S.TrackTitle onClick={(e) => playTrackHandler(e)}>
                     <S.TrackImageWrapper>
-                        <S.TrackIconWrapper>
+                        <S.TrackIconWrapper background={theme.backgroundNote}>
                             <S.TrackIconImage src={note} alt="music" />
                         </S.TrackIconWrapper>
                     </S.TrackImageWrapper>
                     <S.TrackTitleText id={id}>
-                        <S.TrackTitleLink
+                        <S.TrackTitleLink 
                             id={id}
                             onClick={(e) => playTrackHandler(e)}
                             href={trackTitleLink}

@@ -1,9 +1,13 @@
 import PropTypes from 'prop-types';
 import * as S from './styles'
+import { useThemeContext } from '../../../context/theme'
+
 
 export default function Categories({ text, isActive, count }) {
+    const { theme } = useThemeContext();
+
     return (
-        <S.FilterButton isActive={isActive}>
+        <S.FilterButton border={theme.border} isActive={isActive}>
             <p>{text}</p>
             <S.FilterButtonCount isActive={isActive}>
                 {count}

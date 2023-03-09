@@ -2,6 +2,7 @@ import { useNavigate } from 'react-router-dom'
 import Search from '../../components/Search/Search'
 import smile from '../../img/smile_crying.png'
 import * as S from './styles'
+import { useThemeContext } from '../../context/theme'
 
 export default function NotFound() {
     const navigate = useNavigate()
@@ -9,9 +10,10 @@ export default function NotFound() {
     const handleBackToTracks = () => {
         navigate('/tracks')
     }
+    const { theme } = useThemeContext();
 
     return (
-        <S.NotFoundWrapper>
+        <S.NotFoundWrapper style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
             <S.CenterBlockContent>
                 <Search />
                 <S.NotFoundBlock>

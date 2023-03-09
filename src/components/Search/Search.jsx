@@ -14,7 +14,7 @@ export default function Search() {
     const { theme } = useThemeContext()
 
     return (
-        <S.SearchBlock>
+        <S.SearchBlock style={{ backgroundColor: theme.background, color: theme.color }}>
             {theme.colorA ? (
             <S.SearchIcon  src={searchBlack} alt= "search"/>               
             ) : (

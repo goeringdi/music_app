@@ -7,8 +7,10 @@ import Volume from '../Volume/Volume'
 import BarProgress from '../BarProgress/BarProgress'
 import { getCurrentTrack } from '../../../store/slices/playerSlice'
 import * as S from './styles'
+import { useThemeContext } from '../../../context/theme'
 
 export default function Player() {
+    const { theme } = useThemeContext()
     const dispatch = useDispatch()
 
     const currentTrackLink = useSelector(
@@ -38,7 +40,7 @@ export default function Player() {
     }, [currentTrackLink])
 
     return (
-        <S.ContentWrapper isPlaying={isShow}>
+        <S.ContentWrapper isPlaying={isShow} style={{ backgroundColor: theme.background, color: theme.color }}>
             <BarProgress track={track} />
             <S.PlayerBlock>
                 <S.BarPlayer>
