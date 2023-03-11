@@ -71,7 +71,7 @@ export default function Navigation() {
                     </NavLink>
                     {!changeTheme ? (
                     <S.MenuItems>
-                        <S.ThemeDiv onClick={toggleTheme}>
+                        <S.ThemeDiv onClick={toggleTheme} data-testid='theme'>
                             <S.ThemeSvg src={dark} alt= "dark" onClick={toggleThemes}/>
                         </S.ThemeDiv>
                     </S.MenuItems>

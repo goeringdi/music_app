@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import { useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'

@@ -48,7 +48,7 @@ export const Input = styled.input`
     }
 `
 
-export const FormButton = styled.button`
+export const Button = styled.button`
     width: 278px;
     height: 52px;
     font-family: 'StratosSkyeng', serif;
