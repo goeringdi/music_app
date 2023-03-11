@@ -1,6 +1,8 @@
 import { useDispatch } from 'react-redux'
 import { filterByYear } from '../../../store/slices/filterSlice'
 import * as S from './styles'
+import { useThemeContext } from '../../../context/theme'
+
 
 export default function FilterItemYears() {
     const dispatch = useDispatch()
@@ -8,9 +10,10 @@ export default function FilterItemYears() {
     const onYearFilter = (e) => {
         dispatch(filterByYear(e.target.value))
     }
+    const { theme } = useThemeContext();
 
     return (
-        <S.FilterItemsYearWrapper>
+        <S.FilterItemsYearWrapper style={{ backgroundColor: theme.backgroundNote, color: theme.color }}>
             <S.FilterItemsYearLabel htmlFor="year-filter">
                 <input
                     id="year-filter-new"
@@ -19,7 +22,7 @@ export default function FilterItemYears() {
                     value="newest"
                     onClick={onYearFilter}
                 />
-                <S.FilterYearLabel htmlFor="year-filter-new">
+                <S.FilterYearLabel style={{ backgroundColor: theme.backgroundNote, color: theme.color }} htmlFor="year-filter-new">
                     Более новые
                 </S.FilterYearLabel>
                 <input
@@ -29,7 +32,7 @@ export default function FilterItemYears() {
                     value="oldest"
                     onClick={onYearFilter}
                 />
-                <S.FilterYearLabel htmlFor="year-filter-old">
+                <S.FilterYearLabel style={{ backgroundColor: theme.backgroundNote, color: theme.color }} htmlFor="year-filter-old">
                     Более старые
                 </S.FilterYearLabel>
                 <input
@@ -39,7 +42,7 @@ export default function FilterItemYears() {
                     value="default"
                     onClick={onYearFilter}
                 />
-                <S.FilterYearLabel htmlFor="year-filter-default">
+                <S.FilterYearLabel style={{ backgroundColor: theme.backgroundNote, color: theme.color }} htmlFor="year-filter-default">
                     Любые
                 </S.FilterYearLabel>
             </S.FilterItemsYearLabel>

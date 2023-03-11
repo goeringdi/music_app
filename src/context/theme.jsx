@@ -10,6 +10,7 @@ export const themes = {
     backgroundNote: '#F6F4F4',
     backgroundHeader: '#F6F5F3',
     hoverButton: '#580EA2',
+    borderFilter: '#F6F4F4',
   },
   dark: {
     color: '#fff',
@@ -17,6 +18,7 @@ export const themes = {
     background: '#181818',
     backgroundNote: '#313131',
     hoverButton: '#D9B6FF',
+    borderFilter: '#313131',
   },
 }
 

@@ -37,6 +37,7 @@ export default function PlaylistItem({
                     </S.TrackImageWrapper>
                     <S.TrackTitleText id={id}>
                         <S.TrackTitleLink 
+                            style={{ backgroundColor: theme.background, color: theme.color }}
                             id={id}
                             onClick={(e) => playTrackHandler(e)}
                             href={trackTitleLink}
@@ -46,7 +47,7 @@ export default function PlaylistItem({
                         </S.TrackTitleLink>
                     </S.TrackTitleText>
                 </S.TrackTitle>
-                <S.TrackAuthor>{trackAuthorText}</S.TrackAuthor>
+                <S.TrackAuthor style={{ backgroundColor: theme.background, color: theme.color }}>{trackAuthorText}</S.TrackAuthor>
                 <S.TrackAlbum>{trackAlbumText}</S.TrackAlbum>
                 <S.TrackTime>
                     <S.TrackTimeWrapper>

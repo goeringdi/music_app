@@ -9,7 +9,9 @@ import { useThemeContext } from '../../context/theme'
 import dark from '../../img/icon/dark.svg'
 import light from '../../img/icon/light.svg'
 
+
 export default function Navigation() {
+
     const [menuShown, setMenuShown] = useState(false)
 
     const burgerClickHandler = () => setMenuShown(!menuShown)
@@ -59,13 +61,13 @@ export default function Navigation() {
             <S.Menu style={{ display: menuShown ? 'block' : 'none' }}>
                 <S.MenuList>
                     <NavLink to="/tracks">
-                        <S.MenuItem>Главная</S.MenuItem>
+                        <S.MenuItem style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>Главная</S.MenuItem>
                     </NavLink>
                     <NavLink to="/my_playlist">
-                        <S.MenuItem>Мой плейлист</S.MenuItem>
+                        <S.MenuItem style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>Мой плейлист</S.MenuItem>
                     </NavLink>
                     <NavLink to="/login" onClick={onLogout}>
-                        <S.MenuItem>Выйти</S.MenuItem>
+                        <S.MenuItem style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>Выйти</S.MenuItem>
                     </NavLink>
                     {!changeTheme ? (
                     <S.MenuItems>

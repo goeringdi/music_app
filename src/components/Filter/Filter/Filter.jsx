@@ -58,12 +58,12 @@ export default function Filter() {
                     )
                 }
             >
-                <Categories 
+                <Categories
                     text="исполнителю"
                     isActive={filteredByAuthor}
                     count={String(authorsValue.length)}
                 />
-                <S.AuthorWrapper isActive={isActive}>
+                <S.AuthorWrapper isActive={isActive} style={{backgroundColor: theme.backgroundNote, color: theme.color, border: theme.borderFilter}}>
                     <S.FilterItems>
                         {authors
                             .filter(
@@ -91,7 +91,7 @@ export default function Filter() {
                     isActive={filteredByYear}
                     count="1"
                 />
-                <S.YearWrapper isActive={isActive}>
+                <S.YearWrapper isActive={isActive} style={{backgroundColor: theme.backgroundNote, color: theme.color, border: theme.borderFilter}}>
                     <FilterItemYears />
                 </S.YearWrapper>
             </S.ButtonWrapper>
@@ -107,7 +107,7 @@ export default function Filter() {
                     isActive={filteredByGenre}
                     count={String(genresValue.length)}
                 />
-                <S.GenreWrapper isActive={isActive}>
+                <S.GenreWrapper isActive={isActive} style={{backgroundColor: theme.backgroundNote, color: theme.color, border: theme.borderFilter}}>
                     <S.FilterItems>
                         {genres
                             .filter((item, pos) => genres.indexOf(item) === pos)
