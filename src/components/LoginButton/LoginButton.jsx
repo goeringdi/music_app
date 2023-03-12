@@ -37,6 +37,7 @@ function LoginButton({ password, email }) {
             dispatch(setToken(token?.access))
             document.cookie = `token=${token?.refresh}`
             dispatch(setLogin())
+            console.log(data)
         }
     }, [token])
 

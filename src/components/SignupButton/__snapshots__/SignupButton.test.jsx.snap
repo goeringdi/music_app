@@ -1,6 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<Button /> Snapshots tests should render successfully and match snapshot 1`] = `
+
+exports[`<Button /> should render successfully and match snapshot 1`] = `
 <div>
   <button
     class="sc-eDvSVe phOoF"
@@ -9,5 +10,3 @@ exports[`<Button /> Snapshots tests should render successfully and match snapsho
   </button>
 </div>
 `;
-
-
