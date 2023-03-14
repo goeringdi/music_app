@@ -8,7 +8,7 @@ import {
   themes,
 } from "../context/theme";
 import PropTypes from 'prop-types';
-import { Router } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 
 const AllProviders = ({ children }) => {
@@ -24,11 +24,11 @@ const AllProviders = ({ children }) => {
   };
 
   return (
-    <Router>
+    <BrowserRouter>
     <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
-    </Router>
+    </BrowserRouter>
   );
 };
 
@@ -38,7 +38,11 @@ const AllProviders = ({ children }) => {
 export function withStoreProvider(store) {
   // eslint-disable-next-line react/prop-types
   return function Wrapper({ children }) {
-    return <Provider store={store}>{children}</Provider>;
+    return (  
+    <AllProviders>
+    <Provider store={store}>{children}</Provider>
+  </AllProviders>
+    )
   };
 }
 
