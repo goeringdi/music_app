@@ -35,7 +35,7 @@ export default function Navigation() {
     };
     console.log(theme)
     return (
-        <S.Navigation style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
+        <S.Navigation data-testid="another-element" style={{ backgroundColor: theme.backgroundHeader, color: theme.color }}>
             <NavLink to="/tracks">
                 {theme.colorA ? (
                     <S.LogoNav src={logoBlack} alt="logo" />
@@ -71,7 +71,7 @@ export default function Navigation() {
                     </NavLink>
                     {!changeTheme ? (
                     <S.MenuItems>
-                        <S.ThemeDiv onClick={toggleTheme}>
+                        <S.ThemeDiv data-testid="custom-element" onClick={toggleTheme}>
                             <S.ThemeSvg src={dark} alt= "dark" onClick={toggleThemes}/>
                         </S.ThemeDiv>
                     </S.MenuItems>

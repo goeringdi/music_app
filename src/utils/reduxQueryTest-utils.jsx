@@ -8,6 +8,7 @@ import {
   themes,
 } from "../context/theme";
 import PropTypes from 'prop-types';
+import { Router } from "react-router-dom";
 
 
 const AllProviders = ({ children }) => {
@@ -23,9 +24,11 @@ const AllProviders = ({ children }) => {
   };
 
   return (
+    <Router>
     <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>
       {children}
     </ThemeContext.Provider>
+    </Router>
   );
 };
 
