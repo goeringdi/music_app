@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Button /> should render successfully and match snapshot 1`] = `
+<div>
+  <button
+    class="sc-eDvSVe phOoF"
+  >
+    Зарегистрироваться
+  </button>
+</div>
+`;

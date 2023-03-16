@@ -1,11 +1,12 @@
 import {useState} from "react";
-import {MainPage} from '../pages/Main';
 import { ThemeContext, themes } from "./theme";
+import PropTypes from 'prop-types';
 
-export const  ChangeThemeTrack= () => {
+
+export const  ChangeThemeTrack= ({children}) => {
   const [currentTheme, setCurrentTheme] = useState(themes.dark);
 
-  const toggleTheme = () => {
+ const toggleTheme = () => {
     if (currentTheme === themes.dark) {
       setCurrentTheme(themes.light);
       return;
@@ -16,8 +17,11 @@ export const  ChangeThemeTrack= () => {
 
     return (
       <ThemeContext.Provider value={{ theme: currentTheme, toggleTheme }}>        
-          < MainPage />
+          {children}
       </ThemeContext.Provider>
 
     );
   };
+  ChangeThemeTrack.propTypes = {
+    children: PropTypes.element,
+    };

@@ -1,17 +1,14 @@
-import { Navigate } from "react-router-dom";
+import { Navigate, Outlet } from 'react-router-dom'
 import PropTypes from 'prop-types';
 
 
-export const ProtectedRoute = ({ children, redirectPath = "/", isAllowed }) => {
-  if (!isAllowed) {
-    return <Navigate to={redirectPath} replace={true} />;
-  }
+export default function ProtectedRoute({ isLogin }) {
+    if (!isLogin) {
+        return <Navigate to="/login" replace />
+    }
 
-  return children;
-};
-
+    return <Outlet />
+}
 ProtectedRoute.propTypes = {
-    children: PropTypes.object,
-    redirectPath: PropTypes.string,
-    isAllowed: PropTypes.bool,
+    isLogin: PropTypes.bool
     };
