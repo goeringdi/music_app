@@ -9,6 +9,12 @@ import {
 } from "../context/theme";
 import PropTypes from 'prop-types';
 import { BrowserRouter } from "react-router-dom";
+import { musicApi } from '../api/musicApi'
+import authReducer from '../store/slices/authSlice'
+import filterReducer from '../store/slices/filterSlice'
+import searchReducer from '../store/slices/searchSlice'
+import playerReducer from '../store/slices/playerSlice'
+import playlistsReducer from '../store/slices/playlistSlice'
 
 
 const AllProviders = ({ children }) => {
@@ -53,11 +59,15 @@ export function withStoreProvider(store) {
 export const setupApiStore = (api, extraReducers, withoutListeners) => {
   const getStore = () =>
     configureStore({
-      reducer: { [api.reducerPath]: api.reducer, ...extraReducers },
-      middleware: (gdm) =>
-        gdm({ serializableCheck: false, immutableCheck: false }).concat(
-          api.middleware
-        ),
+      reducer: {[musicApi.reducerPath]: musicApi.reducer,
+        auth: authReducer,
+        filter: filterReducer,
+        player: playerReducer,
+        playlists: playlistsReducer,
+        search: searchReducer, },
+        middleware: (getDefaultMiddleware) =>
+        getDefaultMiddleware().concat(musicApi.middleware),
+        
     });
 
   const initialStore = getStore();
