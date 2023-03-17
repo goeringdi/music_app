@@ -56,7 +56,7 @@ export function withStoreProvider(store) {
  * Функция для мока api
  * @link https://github.com/reduxjs/redux-toolkit/blob/64a30d83384d77bcbc59231fa32aa2f1acd67020/packages/toolkit/src/query/tests/helpers.tsx#L170
  */
-export const setupApiStore = (api, extraReducers, withoutListeners) => {
+export const setupApiStore = (api, withoutListeners) => {
   const getStore = () =>
     configureStore({
       reducer: {[musicApi.reducerPath]: musicApi.reducer,
