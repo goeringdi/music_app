@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import { useUserSignupMutation } from '../../api/musicApi'
 import logo from '../../img/LogoBlack.png'
-import { SignupButton } from '../../components/SignupButton/SignupButton'
 import * as S from './styles'
 
 export default function Signup() {
@@ -18,7 +17,6 @@ export default function Signup() {
 
   const onSignup = (e) => {
     e.preventDefault()
-
     if (userValues.password === validatePassword) {
       signup(userValues)
     } else {
@@ -83,7 +81,9 @@ export default function Signup() {
             type="password"
             onChange={handleValidatePasswordChange}
           />
-          <SignupButton onClick={(e) => onSignup(e)} />
+          <S.FormButton onClick={(e) => onSignup(e)}>
+            Зарегистрироваться
+          </S.FormButton>
           {isSuccess && <Navigate to="/login" replace />}
         </S.Form>
       </S.FormWrapper>
